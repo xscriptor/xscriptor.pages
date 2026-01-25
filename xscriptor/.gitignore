@@ -10,7 +10,7 @@
 # Next.js
 /.next/
 /out/
-/otros/
+/otros/config/database.php
 
 # Production
 /build
