@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './PreviewX.module.css';
 
-const PreviewXOs: React.FC = () => {
+const Previewx: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,10 +30,10 @@ const PreviewXOs: React.FC = () => {
 
   return (
     <div ref={containerRef} className={styles.previewsContainer}>
-      {/* XOs gnome section*/}
+      {/* x gnome section*/}
       <section className={styles.section}>
         <a className={styles.linksline}
-          href="https://github.com/xscriptor/xos"
+          href="https://github.com/xscriptor/x-linux"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -43,8 +43,8 @@ const PreviewXOs: React.FC = () => {
         <div className={styles.literaryGrid}>
           <div className={`${styles.imageWrapper} ${styles.literary1}`}>
             <Image
-              src="/images/xos/xos00.png"
-              alt="XOs first image on gnome"
+              src="/images/x/x00.png"
+              alt="x first image on gnome"
               fill
               className={styles.previewImage}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -53,17 +53,17 @@ const PreviewXOs: React.FC = () => {
         </div>
         <section className={`${styles.installsnippet}`}>
           <pre>
-  GNOME is one of the most complete desktop environments, ready for customization. If you need more, you can add extensions to achieve more profound results. It is very user-friendly, which makes it easier to learn how it works.
-</pre>
-<code>
-  (This is especially helpful if this is your first time using it.)
-</code>
+            GNOME is one of the most complete desktop environments, ready for customization. If you need more, you can add extensions to achieve more profound results. It is very user-friendly, which makes it easier to learn how it works.
+          </pre>
+          <code>
+            (This is especially helpful if this is your first time using it.)
+          </code>
         </section>
       </section>
 
       <section className={styles.section}>
         <a className={styles.linksline}
-          href="https://github.com/xscriptor/xos/blob/main/airootfs/root/xos-postinstall.sh"
+          href="https://github.com/xscriptor/x-linux/blob/main/airootfs/root/x-postinstall.sh"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -73,8 +73,8 @@ const PreviewXOs: React.FC = () => {
         <div className={styles.literaryGrid}>
           <div className={`${styles.imageWrapper} ${styles.literary1}`}>
             <Image
-              src="/images/xos/xos01.png"
-              alt="XOs first image on gnome"
+              src="/images/x/x01.png"
+              alt="x first image on gnome"
               fill
               className={styles.previewImage}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -108,7 +108,7 @@ const PreviewXOs: React.FC = () => {
 
       <section className={styles.section}>
         <a className={styles.linksline}
-          href="https://github.com/xscriptor/xos/tree/main/airootfs/root/xos-assets/skel/.config"
+          href="https://github.com/xscriptor/x-linux/tree/main/airootfs/root/x-assets/skel/.config"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -118,8 +118,8 @@ const PreviewXOs: React.FC = () => {
         <div className={styles.literaryGrid}>
           <div className={`${styles.imageWrapper} ${styles.literary1}`}>
             <Image
-              src="/images/xos/xos04.png"
-              alt="XOs fastfetch"
+              src="/images/x/x04.png"
+              alt="x fastfetch"
               fill
               className={styles.previewImage}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -130,7 +130,7 @@ const PreviewXOs: React.FC = () => {
           <h3>XSync config files:</h3>
           <pre><code>
             CONFIG_DIRS=(&#34;kitty&#34; &#34;helix&#34; &#34;yazi&#34; &#34;zellij&#34; &#34;fastfetch&#34;)
-            rsync -avh /root/xos-assets/skel/.config/$dir/ &#34;$USER_DIR/.config/$dir/&#34;
+            rsync -avh /root/x-assets/skel/.config/$dir/ &#34;$USER_DIR/.config/$dir/&#34;
           </code></pre>
           <strong>Automatic installation of customizations</strong>
         </section>
@@ -148,8 +148,8 @@ const PreviewXOs: React.FC = () => {
         <div className={styles.literaryGrid}>
           <div className={`${styles.imageWrapper} ${styles.literary1}`}>
             <Image
-              src="/images/xos/xos03.png"
-              alt="vscode with xcustomization on XOs"
+              src="/images/x/x03.png"
+              alt="vscode with xcustomization on x"
               fill
               className={styles.previewImage}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -170,8 +170,8 @@ const PreviewXOs: React.FC = () => {
         <div className={styles.literaryGrid}>
           <div className={`${styles.imageWrapper} ${styles.literary1}`}>
             <Image
-              src="/images/xos/xos02.png"
-              alt="XOs first with obsidian"
+              src="/images/x/x02.png"
+              alt="x first with obsidian"
               fill
               className={styles.previewImage}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -184,4 +184,4 @@ const PreviewXOs: React.FC = () => {
   );
 };
 
-export default PreviewXOs;
+export default Previewx;

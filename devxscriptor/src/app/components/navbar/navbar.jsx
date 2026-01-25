@@ -10,15 +10,15 @@ import XscriptorIcon from "../navbarIcons/XscriptorIcon";
 import GitHubIcon from "../navbarIcons/GitHubIcon";
 import { PowerOnIcon, PowerOffIcon } from "../navbarIcons/OnOff";
 import { PagesStyles } from "../pagesstyles";
-import XOsIcon from '../navbarIcons/XOsIcon';
+import XIcon from '../navbarIcons/xIcon';
 
 const links = [
   { id: "home", url: "/", title: <HomeIcon />, label: "Go home" },
   { id: "resources", url: "/resources", title: <ResourcesIcon />, label: "Go resources" },
-  { id: "github", url: "/repos", title: <GitHubIcon />, label: "Go repos page"},
-  { id: "xos", url: "/xos", title: <XOsIcon />, label: "go to XOs page" },
+  { id: "github", url: "/repos", title: <GitHubIcon />, label: "Go repos page" },
+  { id: "x", url: "/x", title: <XIcon />, label: "go to x page" },
   { id: "portfolio", url: "/portfolio", title: <PortfolioIcon />, label: "go portfolio" },
-  { id: "contact", url: "/contact", title: <ContactIcon />, label: "go contact page"},
+  { id: "contact", url: "/contact", title: <ContactIcon />, label: "go contact page" },
   { id: "xscriptor.com", url: "https://xscriptor.com", title: <XscriptorIcon />, label: "go xscriptor main page" },
 ];
 
@@ -29,18 +29,18 @@ const Navbar = () => {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
-    
+
     // Escuchar cambios en el tema
     const observer = new MutationObserver(() => {
       const isDark = document.documentElement.classList.contains('dark');
       setTheme(isDark ? 'dark' : 'light');
     });
-    
+
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class']
     });
-    
+
     return () => observer.disconnect();
   }, []);
 
@@ -49,7 +49,7 @@ const Navbar = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
+
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
@@ -74,7 +74,7 @@ const Navbar = () => {
             aria-label={link.label}
           />
         ))}
-        
+
         {/* Botón de cambio de tema en el centro */}
         <button
           onClick={toggleTheme}
@@ -84,7 +84,7 @@ const Navbar = () => {
         >
           {theme === 'light' ? <PowerOffIcon /> : <PowerOnIcon />}
         </button>
-        
+
         {rightLinks.map((link) => (
           <NavLink
             link={link}

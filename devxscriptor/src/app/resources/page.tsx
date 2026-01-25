@@ -47,7 +47,7 @@ const repos = [
   },
   {
     name: "x",
-    description: "Scripts for XOS, including the main x.sh entrypoint and modular add-ons. The base script installs the x wrapper, applies required system configuration afte..."
+    description: "Scripts for x, including the main x.sh entrypoint and modular add-ons. The base script installs the x wrapper, applies required system configuration afte..."
   },
   {
     name: "obsidian",
