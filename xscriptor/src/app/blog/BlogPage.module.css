@@ -1,0 +1,63 @@
+/* Contenedor de la lista (opcional) */
+.list {
+  padding: 1rem 0;
+}
+
+/* Tarjeta simple que usa tu tema global */
+.card {
+  display: block;
+  width: 100%;
+  max-width: 560px;        /* centradas en columna */
+  margin: 12px auto;       /* centro horizontal */
+  text-decoration: none;
+
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  min-height: 140px;
+
+  text-align: center;      /* texto centrado */
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+/* Asegura que el Link no cambie colores del tema */
+.card:link,
+.card:visited,
+.card:hover,
+.card:active {
+  color: var(--text);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  /* sombra basada en el color de texto actual */
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  border-color: var(--border);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+  border-color: var(--text);
+}
+
+/* Tipografía interna */
+.cardTitle {
+  margin: 0 0 .5rem;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+
+.cardExcerpt {
+  margin: 0;
+  opacity: .9;
+  font-size: .95rem;
+
+  /* recorta a 3 líneas si el extracto es largo */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

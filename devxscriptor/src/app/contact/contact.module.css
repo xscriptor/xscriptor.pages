@@ -1,0 +1,168 @@
+/* Contact page styles using theme variables */
+
+.contactContainer {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.contactMain {
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+.contactHeader {
+  flex: 1;
+  position: relative;
+  min-height: 224px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .contactHeader {
+    text-align: center;
+  }
+}
+
+.contactTitle {
+  font-size: 1.5rem;
+  letter-spacing: 0.025em;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.contactForm {
+  padding-top: 1.5rem;
+}
+
+.socialSection {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialTitle {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  text-align: center;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: 0.025em;
+}
+
+@media (min-width: 640px) {
+  .socialTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .socialTitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .socialTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .socialTitle {
+    font-size: 1.125rem;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 15rem;
+  padding: 0.5rem 1rem;
+  color: var(--foreground);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px var(--card-shadow);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(251, 191, 36, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px var(--card-shadow);
+}
+
+:root.dark .socialLink {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root.dark .socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+/* Animation classes */
+.fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .socialLink {
+    width: 14rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactHeader {
+    padding: 1rem;
+  }
+  
+  .socialLink {
+    width: 12rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .socialLinks {
+    gap: 0.75rem;
+  }
+}

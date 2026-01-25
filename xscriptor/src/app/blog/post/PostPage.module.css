@@ -1,0 +1,49 @@
+/* Limitar el alcance a este artículo */
+.content {}
+
+/* Que los <p> hereden del tema global:
+   - sin ancho máximo de la tipografía de Tailwind
+   - color del tema
+   - tamaños/line-height heredados
+*/
+.content p {
+  max-width: none !important;
+  color: var(--text);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* (opcional) imágenes fluidas dentro del contenido */
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+
+/* Aplica solo al contenido del post */
+.content p {
+  /* hereda del tema global */
+  color: var(--text);
+  font-size: inherit;
+  line-height: inherit;
+
+  /* quita el estrechamiento */
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  /* alinea según el flujo (por defecto, izquierda) */
+  text-align: inherit; /* o "initial" si prefieres */
+
+  /* márgenes normales de prose (ajusta a gusto) */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* por si hubiera reglas similares en blockquote */
+.content blockquote p {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: inherit;
+}

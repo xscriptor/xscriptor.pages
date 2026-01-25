@@ -1,0 +1,189 @@
+/* Navbar Container */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+
+/* Centered Navigation - Dock Style */
+.centeredNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: var(--navbar-bg);
+  border: 1px solid var(--navbar-border);
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.themeButton {
+  font-family: "EB Garamond", serif;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 60px;
+  position: relative;
+  border-bottom: 2px dashed var(--accent-color);
+}
+
+.themeButton:hover {
+  background: none !important;
+  transform: none !important;
+}
+
+.themeButton:hover::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+/* Punto negro a la izquierda en modo claro */
+[data-theme="light"] .themeButton:hover::after {
+  background-color: #000;
+  left: -12px;
+}
+
+/* Punto amarillo a la derecha en modo oscuro */
+[data-theme="dark"] .themeButton:hover::after {
+  background-color: #ffd700;
+  right: -12px;
+}
+
+.themeButton:active {
+  transform: scale(0.95);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navLink:hover {
+  background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+  transform: translateY(-2px);
+}
+
+.navLink.active {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 15%, transparent);
+  transform: translateY(-1px);
+}
+
+.navLink.active:hover {
+  background: color-mix(in srgb, var(--accent-color) 20%, transparent);
+  transform: translateY(-2px);
+}
+
+.navLink:hover .navIcon {
+  transform: scale(1.2);
+  color: var(--accent-color);
+}
+
+.navIcon {
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .centeredNav {
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .themeButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    min-width: 50px;
+  }
+
+  .navIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .centeredNav {
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1.25rem;
+  }
+
+  .navLink {
+    padding: 0.4rem;
+  }
+
+  .themeButton {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 45px;
+  }
+}
+
+/* Focus states for accessibility */
+.navLink:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Active state */
+.navLink:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,130 @@
+/* Contenedor principal de recursos relacionados */
+.trailcontainer {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+.relatedResources {
+  max-width: 780px;
+  margin: 3rem auto 4rem;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.relatedResources h2 {
+  font-size: 1.75rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Lista de recursos */
+.relatedResources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.relatedResources li {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.relatedResources li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+.relatedResources a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.relatedResources a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.relatedResources li::before {
+  content: "🔗";
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Contenedor del ImageTrail */
+.imageTrailContainer {
+  max-width: 780px;
+  margin: 2rem auto;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .relatedResources {
+    margin: 2rem 1rem 0;
+    padding: 1.5rem;
+  }
+  
+  .relatedResources h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .relatedResources li {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+  }
+  
+  .relatedResources a {
+    font-size: 1rem;
+  }
+  
+  .imageTrailContainer {
+    max-width: 90%;
+    margin: 2rem auto;
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .relatedResources {
+    margin: 1.5rem 0.5rem 0;
+    padding: 1rem;
+  }
+  
+  .relatedResources h2 {
+    font-size: 1.25rem;
+  }
+  
+  .relatedResources li {
+    padding: 0.75rem;
+  }
+  
+  .relatedResources a {
+    font-size: 0.9rem;
+  }
+  
+  .imageTrailContainer {
+    max-width: 100%;
+    margin: 1.5rem 0.5rem;
+    height: 400px;
+  }
+}

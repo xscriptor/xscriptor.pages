@@ -1,0 +1,145 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* dos columnas */
+  gap: 2rem;
+  align-items: start;
+}
+
+.col {
+  padding: 1rem;
+}
+
+/* Línea divisoria vertical entre columnas en desktop/tablet */
+.col:first-child {
+  border-right: 2px solid var(--border);
+}
+
+/* Tipografía y centrado */
+.libros {
+  text-align: center;
+  align-items: center;
+}
+
+.libros li {
+  padding: 2vw;
+  border-bottom: 1px solid var(--border);
+}
+
+.libros li:last-child {
+  border-bottom: none;
+}
+
+.arte {
+  text-align: center;
+  align-items: center;
+}
+
+/* Contenedor responsivo para las imágenes de arte */
+.arteGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.1rem;
+  padding: 1rem 0;
+  justify-items: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Miniaturas de arte con bordes redondeados */
+.arteThumbnail {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arteThumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.libros a {
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.libros a:hover { color: var(--accent); }
+
+.col h2 {
+  color: var(--text);
+}
+
+.col h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.col h2 a:hover {
+  color: var(--accent);
+}
+
+.libros em {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: clamp(18px, 2.5vw, 20px);
+  color: var(--muted);
+  padding-left: 10vw;  /* en pantallas medianas/grandes */
+  padding-right: 10vw;
+}
+
+/* ====== Breakpoints responsivos ====== */
+
+/* <= 1024px: un poco menos de aire */
+@media (max-width: 1024px) {
+  .libros li { padding: 1.25rem; }
+  .libros em { padding-left: 6vw; padding-right: 6vw; }
+  
+  .arteGallery {
+    gap: 0.1rem;
+  }
+  
+  .arteThumbnail {
+    max-width: 220px;
+    border-radius: 10px;
+  }
+}
+
+/* <= 768px: apilar columnas y quitar la línea vertical */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;   /* una sola columna */
+    gap: 1.25rem;
+  }
+  .col:first-child {
+    border-right: none;           /* quitar división vertical */
+    border-bottom: 2px solid var(--border); /* división horizontal entre secciones */
+    padding-bottom: 1.5rem;
+  }
+  .libros li { padding: 1rem; }   /* evitar 2vw en móvil */
+  .libros em { padding: 0 1rem; }  /* o 0 si quieres ancho completo */
+  
+  .arteGallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .arteThumbnail {
+    max-width: 180px;
+    border-radius: 8px;
+  }
+}
+
+/* (Opcional) contenedor con ancho máximo para que no se estire demasiado en ultra-wide */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+

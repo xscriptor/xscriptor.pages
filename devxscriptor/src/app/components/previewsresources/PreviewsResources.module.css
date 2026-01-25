@@ -1,0 +1,291 @@
+.previewsContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--foreground);
+}
+
+/* Scroll reveal animations */
+.section {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageWrapper {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.1s;
+}
+
+.imageWrapper.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delays for images */
+.literary1.visible {
+  transition-delay: 0.2s;
+}
+
+.literary2.visible {
+  transition-delay: 0.3s;
+}
+
+.literary3.visible {
+  transition-delay: 0.4s;
+}
+
+.literary4.visible {
+  transition-delay: 0.5s;
+}
+
+.artistic1.visible {
+  transition-delay: 0.2s;
+}
+
+.artistic2.visible {
+  transition-delay: 0.3s;
+}
+
+.artistic3.visible {
+  transition-delay: 0.4s;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary);
+  font-family: var(--font-eb-garamond);
+  font-style: italic;
+}
+
+/* Tamaño más pequeño en pantallas grandes */
+@media (min-width: 1024px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.previewImage {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.artisticGrid .artistic1 .previewImage {
+  object-position: center top;
+  transform: translateY(10px);
+}
+
+/* Literary Project Grid - First image full width, others in columns */
+.literaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 700px 600px;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.literary1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.literary2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.literary3 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.literary4 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+/* Artistic Project Grid - Different Asymmetric Layout */
+.artisticGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 700px);
+  gap: 1.5rem;
+}
+
+.artistic1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.artistic2 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.artistic3 {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .literaryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 500px 300px;
+  }
+  
+  .literary1 {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+  
+  .literary2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .literary3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .literary4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  
+  .artisticGrid {
+    grid-template-rows: repeat(2, 220px);
+  }
+}
+
+@media (max-width: 768px) {
+  .previewsContainer {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .literaryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 400px 250px;
+    gap: 1rem;
+  }
+  
+  .literary1 {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+  }
+  
+  .literary2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .literary3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .literary4 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  
+  .artisticGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 200px);
+    gap: 1rem;
+  }
+  
+  .artistic1,
+  .artistic2,
+  .artistic3 {
+    grid-column: 1 / 2;
+  }
+  
+  .artistic1 {
+    grid-row: 1 / 2;
+  }
+  
+  .artistic2 {
+    grid-row: 2 / 3;
+  }
+  
+  .artistic3 {
+    grid-row: 3 / 4;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .literaryGrid,
+  .artisticGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .literaryGrid {
+    grid-template-rows: repeat(4, 300px);
+  }
+  
+  .artisticGrid {
+    grid-template-rows: repeat(3, 140px);
+  }
+  
+  .literary1,
+  .literary2,
+  .literary3,
+  .literary4,
+  .artistic1,
+  .artistic2,
+  .artistic3 {
+    grid-column: 1 / 2;
+  }
+  
+  .literary1 {
+    grid-row: 1 / 2;
+  }
+  
+  .literary2 {
+    grid-row: 2 / 3;
+  }
+  
+  .literary3 {
+    grid-row: 3 / 4;
+  }
+  
+  .literary4 {
+    grid-row: 4 / 5;
+  }
+}

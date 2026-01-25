@@ -1,0 +1,507 @@
+@import "tailwindcss";
+
+/* Importación de fuentes personalizadas */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Tema claro (default) */
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #4328a8;
+  --primary-hover: #7c3aed;
+  --secondary: #3b82f6;
+  --secondary-hover: #2563eb;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --border: #e5e7eb;
+  --card-bg: #f9fafb;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --text-muted: #6b7280;
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --nav-border: rgba(209, 213, 219, 0.3);
+}
+
+.dark {
+  /* Tema oscuro */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #fbbf24;
+  --primary-hover: #f59e0b;
+  --secondary: #60a5fa;
+  --secondary-hover: #3b82f6;
+  --accent: #a78bfa;
+  --accent-hover: #8b5cf6;
+  --success: #34d399;
+  --error: #f87171;
+  --warning: #fbbf24;
+  --info: #60a5fa;
+  --border: #374151;
+  --card-bg: #1f2937;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --text-muted: #9ca3af;
+  --nav-bg: rgba(0, 0, 0, 0.6);
+  --nav-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Detectar preferencia del sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #fbbf24;
+    --primary-hover: #f59e0b;
+    --secondary: #60a5fa;
+    --secondary-hover: #3b82f6;
+    --accent: #a78bfa;
+    --accent-hover: #8b5cf6;
+    --success: #34d399;
+    --error: #f87171;
+    --warning: #fbbf24;
+    --info: #60a5fa;
+    --border: #374151;
+    --card-bg: #1f2937;
+    --card-shadow: rgba(0, 0, 0, 0.5);
+    --text-muted: #9ca3af;
+    --nav-bg: rgba(0, 0, 0, 0.6);
+    --nav-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicar fuente EB Garamond globalmente */
+html,
+body,
+main {
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Estilos para etiquetas main */
+main {
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.theme-background {
+  min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(to bottom right, var(--background), var(--muted), var(--background));
+}
+
+/* Home page styles using theme variables */
+.general-glassmorphism {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark .general-glassmorphism {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 640px) {
+  .general-glassmorphism {
+    padding: 2.5rem;
+  }
+}
+
+.profile-image-container {
+  width: 14rem;
+  height: 14rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(156, 163, 175, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+:root.dark .profile-image-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .profile-image-container {
+    margin: 0;
+  }
+}
+
+.encrypted-text {
+  color: #ef4444;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.parent-text {
+  font-size: 5.5rem;
+  letter-spacing: 0.025em;
+}
+
+.small-parent-text {
+  font-size: 1.5rem;
+  letter-spacing: 0.025em;
+}
+
+@media (min-width: 1024px) {
+  .small-parent-text {
+    font-size: 2.25rem;
+  }
+}
+
+.description-container {
+  font-size: 1rem;
+  text-align: right;
+}
+
+@media (min-width: 1024px) {
+  .description-container {
+    font-size: 1.3rem;
+    margin-top: 1.25rem;
+  }
+}
+
+.description-text {
+  color: var(--foreground);
+  transition: color 0.3s ease;
+}
+
+.home-contact-button {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  padding: 0.5rem 1.25rem;
+  background-color: rgba(245, 158, 11, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 9999px;
+  color: #92400e;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.home-contact-button:hover {
+  background-color: #fef3c7;
+  color: #000000;
+}
+
+:root.dark .home-contact-button {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fef3c7;
+}
+
+/* Direct styles for em and p tags */
+em {
+  font-size: 1.125rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--muted-foreground);
+  transition: color 0.3s ease;
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+  text-align: center;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:root.light em {
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+:root.light p {
+  color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+  em {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10ch;
+  }
+}
+
+@keyframes blinkCursor {
+
+  0%,
+  100% {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #fbbf24;
+  }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fbbf24;
+  width: 0;
+  animation:
+    typewriter 1.5s steps(20, end) forwards,
+    blinkCursor 0.7s step-end 10 forwards;
+}
+
+.ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(184, 156, 108, 0.15);
+  transform: scale(1) rotate(45deg);
+  border-radius: 0;
+  pointer-events: none;
+  animation: ripple-wave 0.7s ease-out forwards;
+}
+
+@keyframes ripple-wave {
+  from {
+    transform: scale(1) rotate(45deg);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: scale(6) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-80px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+
+/*Map lines Animation*/
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animated-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 1s ease-out forwards;
+}
+
+
+/* Estilos globales para etiquetas HTML */
+h1 {
+  font-size: 1.5rem;
+  /* text-2xl */
+  font-weight: 400;
+  /* font-bold */
+  margin-bottom: 2.5rem;
+  /* mb-10 */
+  color: var(--primary);
+  /* text-amber-400 dark:text-amber-400 */
+  text-align: center;
+  /* text-center */
+  margin-left: auto;
+  /* mx-auto */
+  margin-right: auto;
+  /* mx-auto */
+  line-height: 1.25;
+  /* leading-tight */
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 1.5rem;
+    /* sm:text-2xl */
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.875rem;
+    /* md:text-3xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+    /* lg:text-4xl */
+  }
+}
+
+/* Clases de utilidad para temas */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-color {
+  border-color: var(--border);
+}
+
+/* Botón para cambiar tema */
+.theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+}
+
+/* TypeWriter cursor animation */
+.typewriter-cursor {
+  animation: blink 1s infinite;
+  font-weight: normal;
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

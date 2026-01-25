@@ -1,0 +1,160 @@
+.container {
+  position: relative;
+}
+
+.loadingOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background-color: rgba(var(--bg-rgb, 0, 0, 0), 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.section {
+  position: relative;
+  z-index: 0;
+  background-color: var(--bg);
+}
+
+.containerInner {
+  container-type: inline-size;
+  margin: 0 auto;
+  padding: 0 1rem;
+  space-y: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.flexBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .flexBlock {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.textBlock {
+  text-wrap: balance;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  text-align: center;
+  max-width: 36rem;
+  width: 100%;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .textBlock {
+    text-align: left;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    border-left: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+    padding-left: 1.5rem;
+  }
+}
+
+.textBlockRight {
+  composes: textBlock;
+  border-right: 2px solid var(--border);
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .textBlockRight {
+    text-align: left;
+  }
+}
+
+.videoContainer {
+  width: 100%;
+  max-width: 48rem;
+}
+
+@media (min-width: 1024px) {
+  .videoContainer {
+    max-width: 31rem;
+  }
+}
+
+.videoWrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .video {
+    object-fit: contain;
+  }
+}
+
+.spacer {
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .spacer {
+    height: 2.5rem;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.button {
+  background-color: transparent;
+  color: var(--text);
+  border: none;
+  border-bottom: 2px dashed var(--accent);
+  border-radius: 0;
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  transform: none;
+  box-shadow: none;
+}
+
+.button:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.button a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}

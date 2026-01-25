@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+
+
+/*Fuentes*/
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+h1{
+    font-weight: 600;
+    font-size: clamp(28px, 22vw, 40px);
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    text-align: center;
+  }
+
+h2{
+    font-weight: 600;
+    font-size: clamp(24px, 10vw, 28px);
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    text-align: center;
+  }
+
+  h3{
+    font-weight: 600;
+    font-size: clamp(20px, 9vw, 26px);
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    text-align: center;
+  }
+
+p {
+    font-weight: 400;
+    font-size: clamp(18px, 2.5vw, 20px);
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    text-align: justify;
+    padding-right: 15vw;
+    padding-left: 15vw;
+  }
+
+/*Definición de tema claro por defecto y oscuro secundario*/
+
+/* Tema por defecto: claro */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --accent: #5b2e8d;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* Tema oscuro elegante con gradiente */
+:root[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --accent: #ffe884;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* Aplicación de variables */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: "EB Garamond", serif;
+}
+
+/* Definición de enlaces*/
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: #ff4141;
+}
+
+/* Glassmorphism adaptable */
+.glass {
+  background: color-mix(in srgb, var(--bg) 70%, transparent); /* más sólido en claro */
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+}
+
+:root[data-theme="dark"] .glass {
+  background: color-mix(in srgb, var(--bg) 15%, transparent); /* más translúcido en oscuro */
+}
+
+.relative {
+  position: relative;
+  z-index: 1;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;  /* Transición para opacidad y filtro */
+}
+
+
+/*Animación del inicio*/
+
+.lottie-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Puedes ajustar el color de fondo según tu diseño */
+}
+
+.lottie-container > div {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Evita scroll del body cuando el menú está abierto */
+body.menu-open { overflow: hidden; }
