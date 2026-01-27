@@ -41,53 +41,55 @@ export default function NewsletterFooter() {
   };
 
   return (
-    <div
-      className="
-        w-full max-w-lg mx-auto
-        p-6 md:p-7
-        text-(--text)
-        items-center
-        text-center
-      "
-    >
-      <h2 className="mb-2 text-2sm text-center">
-        Suscríbete a nuestro boletín
-      </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <input
-            type="email"
-            placeholder="Ingresa tu email"
-            className="
-              newsletter w-full rounded-xl
-              px-3 py-2.5
-              outline-none transition
-              border bg-transparent
-              focus:ring-2
-            "
-            aria-label="email"
-            style={{
-              fontFamily: "EB Garamond",
-              color: "var(--text)",
-              caretColor: "var(--accent)",
-            }}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+    <div className="w-full max-w-4xl mx-auto px-4 py-6">
+      {/* Layout horizontal */}
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col md:flex-row items-center justify-center gap-4"
+      >
+        {/* Título */}
+        <span className="text-sm text-[var(--text)] whitespace-nowrap">
+          X Recibe poesía y reflexiones
+        </span>
 
-        <label className="flex items-start gap-2 text-sm leading-6">
+        {/* Input */}
+        <input
+          type="email"
+          placeholder="tu@email.com"
+          className="
+            w-full md:w-64
+            px-4 py-2
+            text-sm
+            rounded-lg
+            border border-[var(--border)]
+            bg-transparent
+            outline-none
+            focus:border-[var(--accent)]
+            transition-colors
+          "
+          aria-label="email"
+          style={{
+            fontFamily: "EB Garamond",
+            color: "var(--text)",
+            caretColor: "var(--accent)",
+          }}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        {/* Checkbox inline */}
+        <label className="flex items-center gap-2 text-xs whitespace-nowrap cursor-pointer">
           <input
             type="checkbox"
-            className="mt-1.5 h-4 w-4 rounded-sm"
+            className="h-3.5 w-3.5 rounded-sm cursor-pointer"
             checked={acceptedTerms}
             onChange={(e) => setAcceptedTerms(e.target.checked)}
             required
             style={{ accentColor: "var(--accent)" }}
           />
-          <span>
-            Acepto los{" "}
+          <span className="opacity-70">
+            Acepto{" "}
             <Link
               href="/terminos-y-condiciones"
               target="_blank"
@@ -95,40 +97,32 @@ export default function NewsletterFooter() {
               className="underline"
               style={{ color: "var(--accent)" }}
             >
-              términos y condiciones
+              términos
             </Link>
-            .
           </span>
         </label>
 
+        {/* Botón */}
         <button
           type="submit"
           className="
-            underline
-            hover:text-(--text)
-            w- rounded-xl px-4 py-2.5
-            focus:outline-none focus:ring-2 focus:ring-offset-2
+            px-4 py-2
+            text-sm
+            rounded-lg
+            border border-[var(--accent)]
+            text-[var(--accent)]
+            hover:bg-[var(--accent)] hover:text-[var(--accent-text)]
+            transition-all duration-200
+            whitespace-nowrap
           "
-          style={{
-            alignContent: "center",
-            alignItems: "center",
-            color: "var(--accent)",
-            background: "var(--bg)",
-            borderColor: "color-mix(in srgb, var(--bg) 60%, transparent)",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.opacity = "0.95";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
-          }}
         >
           Suscribirse
         </button>
       </form>
 
+      {/* Mensaje de feedback */}
       {message && (
-        <p className="mt-4 text-center text-sm" style={{ color: "var(--accent)" }}>
+        <p className="mt-3 text-center text-xs" style={{ color: "var(--accent)" }}>
           {message}
         </p>
       )}

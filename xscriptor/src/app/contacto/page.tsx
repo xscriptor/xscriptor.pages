@@ -3,11 +3,11 @@ import ContactForm from "../components/contact/contactForm";
 import Socialcontact from "../components/contact/socialcontact";
 
 export const metadata = {
-  tittle: "Contacto - Xscriptor",
-  description: "Comunícate",
+  title: "Contacto — Xscriptor",
+  description: "Comunícate con Óscar Preciado — Formulario de contacto y redes sociales",
 }
 
-export default function ContactPage(){
+export default function ContactPage() {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.content}>

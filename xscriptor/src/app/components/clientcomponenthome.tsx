@@ -53,7 +53,7 @@ export default function Clientcomponenthome() {
           </div>
           {/* Bloque 2 */}
           <div className={styles.flexBlock}>
-            
+
             <div className={styles.videoContainer}>
               <div className={styles.videoWrapper}>
                 <video
