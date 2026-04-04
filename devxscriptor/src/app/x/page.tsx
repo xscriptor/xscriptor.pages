@@ -20,14 +20,47 @@ export default function page() {
                 {/* DecryptedText Section - Right */}
                 <div className="flex-1 lg:text-left">
                     <p className="description-container">
-                        A custom Arch Linux–based Spin focused on simplicity, reproducibility, and a unique visual identity under the “X” branding.
+                        X is a custom Arch Linux spin focused on simplicity, reproducibility, and a strong visual identity.
                     </p>
                     <p className="description-container">
-                        Fully built from official Arch repositories using the standard mkarchiso workflow.
-                        Includes everything needed to reproduce the system: ISO profile, package list, post-install scripts, and custom branding assets.
-                        Currently an experimental project, not yet intended for production use.
-
+                        It is built with the standard mkarchiso workflow and is evolving together with the X ecosystem, where package tooling is a core part of the roadmap.
                     </p>
+                    <div className="description-container text-left space-y-3">
+                        <p className="font-semibold text-neutral-900 dark:text-neutral-100">Core repositories</p>
+                        <ul className="pl-5" style={{ color: "var(--foreground)" }}>
+                            <li>
+                                <a href="https://github.com/xscriptor/x-repo" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-amber-600/80 hover:decoration-amber-500" style={{ color: "var(--foreground)" }}>
+                                    x-repo
+                                </a>{" "}
+                                - main repository and ecosystem entry point.
+                            </li>
+                            <li>
+                                <a href="https://github.com/xscriptor/x-linux" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-amber-600/80 hover:decoration-amber-500" style={{ color: "var(--foreground)" }}>
+                                    x-linux
+                                </a>{" "}
+                                - Arch spin build profile, packages, and branding base.
+                            </li>
+                            <li>
+                                <a href="https://github.com/xscriptor/xpm" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-amber-600/80 hover:decoration-amber-500" style={{ color: "var(--foreground)" }}>
+                                    xpm
+                                </a>{" "}
+                                - package manager focused on a practical workflow for X.
+                            </li>
+                            <li>
+                                <a href="https://github.com/xscriptor/xpkg" target="_blank" rel="noopener noreferrer" className="font-semibold underline decoration-amber-600/80 hover:decoration-amber-500" style={{ color: "var(--foreground)" }}>
+                                    xpkg
+                                </a>{" "}
+                                - package and distribution tooling under active development.
+                            </li>
+                        </ul>
+                        <p style={{ color: "var(--foreground)" }}>
+                            Want to collaborate or ask about the roadmap?{" "}
+                            <a href="mailto:x@xscriptor.com" className="font-semibold underline decoration-amber-600/80 hover:decoration-amber-500" style={{ color: "var(--foreground)" }}>
+                                Contact x@xscriptor.com
+                            </a>
+                            .
+                        </p>
+                    </div>
                 </div>
                 {/* Horizontal Separator */}
                 <div className="w-full flex justify-center my-16">
