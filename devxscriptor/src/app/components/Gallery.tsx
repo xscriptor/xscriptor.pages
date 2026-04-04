@@ -54,7 +54,7 @@ const images = [
 export default function Gallery() {
     return (
         <div className="w-full max-w-7xl mx-auto px-4 py-12">
-            <h2 className="text-3xl font-['EB_Garamond'] text-center text-[var(--primary)] mb-12 opacity-80">
+            <h2 className="text-3xl font-['EB_Garamond'] text-right text-[var(--primary)] mb-12 opacity-80">
                 Gallery
             </h2>
 

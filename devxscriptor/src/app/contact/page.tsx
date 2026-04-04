@@ -16,7 +16,7 @@ export default function Contact() {
     <div className={styles.contactContainer}>
       <div className={`${styles.contactMain} ${styles.fadeInUp}`}>
         <div className={styles.contactHeader}>
-          <h1 style={{paddingTop: '4rem'}}>
+          <h1>
             <DecryptedText
               text="Contact"
               animateOn="view"

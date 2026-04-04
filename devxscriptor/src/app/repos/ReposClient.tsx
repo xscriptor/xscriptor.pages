@@ -156,7 +156,7 @@ export default function ReposClient({ repos: initialRepos, isStaticFallback }: R
   return (
     <main className={styles.container}>
       <Burbujas />
-      <h1 className="typing" style={{ paddingTop: '4rem' }}>
+      <h1 className="typing">
         My Projects
       </h1>
 

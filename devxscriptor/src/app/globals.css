@@ -396,42 +396,69 @@ p {
 
 /* Estilos globales para etiquetas HTML */
 h1 {
-  font-size: 1.5rem;
-  /* text-2xl */
-  font-weight: 400;
-  /* font-bold */
-  margin-bottom: 2.5rem;
-  /* mb-10 */
+  font-size: 1.60rem;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
   color: var(--primary);
-  /* text-amber-400 dark:text-amber-400 */
-  text-align: center;
-  /* text-center */
+  text-align: right;
+  width: 100%;
   margin-left: auto;
-  /* mx-auto */
   margin-right: auto;
-  /* mx-auto */
-  line-height: 1.25;
-  /* leading-tight */
+  line-height: 1.1;
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+
+h3 {
+  text-align: right;
+  color: var(--primary);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.2;
+}
+
+h1 em,
+h2 em,
+h3 em {
+  color: var(--primary);
+  font-size: inherit;
+  font-style: italic;
+  font-weight: inherit;
+  display: inline;
+  margin: 0;
+  max-width: none;
+  text-align: inherit;
+}
+
+:root.light h1 em,
+:root.dark h1 em {
+  color: var(--primary);
+  font-style: italic;
 }
 
 @media (min-width: 640px) {
   h1 {
-    font-size: 1.5rem;
-    /* sm:text-2xl */
+    font-size: 2.15rem;
   }
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 1.875rem;
-    /* md:text-3xl */
+    font-size: 2.45rem;
   }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 2.25rem;
-    /* lg:text-4xl */
+    font-size: 2.9rem;
   }
 }
 

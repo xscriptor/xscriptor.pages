@@ -60,7 +60,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center pt-24 pb-12 px-4 md:px-8">
-      <h1 className="text-4xl md:text-5xl font-['EB_Garamond'] mb-16 text-center text-[var(--primary)] text-shadow-sm">
+      <h1 className="text-4xl md:text-5xl font-['EB_Garamond'] mb-16 text-right text-[var(--primary)] text-shadow-sm">
         Resources
       </h1>
 

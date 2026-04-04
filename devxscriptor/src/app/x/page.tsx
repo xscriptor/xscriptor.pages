@@ -10,7 +10,7 @@ export default function page() {
 
     return (
         <div className={`animate-fade-in-up min-h-screen flex flex-col items-center justify-center px-4`}>
-            <h1 style={{ paddingTop: '4rem' }}>
+            <h1>
                 X
             </h1>
             <div className="w-full max-w-6xl mx-auto text-center">
