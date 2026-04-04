@@ -16,7 +16,7 @@ export default function Home() {
           
           <div className="flex-1 lg:text-right">
             <h2 className="parent-text text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--primary)]">
-              <TypeWriter data={["Xscriptor", "Code", "Dev"]} />
+              X <TypeWriter data={["scriptor", "Cypher", "Developer", "Designer"]} />
             </h2>
           </div>
 
