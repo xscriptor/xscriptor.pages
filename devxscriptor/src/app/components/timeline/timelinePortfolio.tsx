@@ -259,9 +259,9 @@ export function PortfolioTimeline() {
     {
       title: "Present",
       content: (
-        <div key="timeline-present">
-          <h3 className="text-amber-700 dark:text-yellow-200">X development</h3>
-          <ul className="list-disc pl-5 text-neutral-950 dark:text-neutral-200 text-sm md:text-base space-y-2">
+        <div key="timeline-present" style={{ color: 'var(--foreground)' }}>
+          <h3 style={{ color: 'var(--primary)' }}>X development</h3>
+          <ul className="list-disc pl-5 text-sm md:text-base space-y-2" style={{ color: 'var(--foreground)' }}>
             <li key="present-degree">
               Completed an{" "}
               <strong>
