@@ -59,7 +59,7 @@ export default function Contact() {
             target="_blank"
             className={styles.socialLink}
           >
-            Instagram (Xcode) <InstagramIcon />
+            Instagram (X-Dev) <InstagramIcon />
           </a>
 
           <a
