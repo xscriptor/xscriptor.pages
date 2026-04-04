@@ -193,11 +193,11 @@ export default function ReposClient({ repos: initialRepos, isStaticFallback }: R
                 <div className={styles.repoMeta}>
                   <div className={styles.repoStats}>
                     <span className={styles.stat}>
-                      <span className={styles.statIcon}>⭐</span>
+                      <span className={styles.statIcon}>&#9733;</span>
                       {repo.stargazers_count}
                     </span>
                     <span className={styles.stat}>
-                      <span className={styles.statIcon}>🍴</span>
+                      <span className={styles.statIcon}>&#9282;</span>
                       {repo.forks_count}
                     </span>
                   </div>

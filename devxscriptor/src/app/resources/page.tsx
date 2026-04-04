@@ -67,7 +67,7 @@ export default function ResourcesPage() {
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {repos.map((repo, index) => (
           <Link
-            href={`https://github.com/xscriptordev/${repo.name}`}
+            href={`https://github.com/xscriptor/${repo.name}`}
             key={repo.name}
             target="_blank"
             rel="noopener noreferrer"
@@ -125,7 +125,7 @@ export default function ResourcesPage() {
         className="mt-16 text-center"
       >
         <p className="text-[var(--text-muted)] text-sm">
-          More projects available at <a href="https://github.com/xscriptordev" className="text-[var(--primary)] hover:underline">github.com/xscriptordev</a> and <a href="https://github.com/xscriptor" className="text-[var(--primary)] hover:underline">github.com/xscriptor</a>
+          More projects available at <a href="https://github.com/xscriptor" className="text-[var(--primary)] hover:underline">github.com/xscriptor</a>
         </p>
       </motion.div>
 

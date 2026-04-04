@@ -20,7 +20,7 @@ export default function page() {
                 {/* DecryptedText Section - Right */}
                 <div className="flex-1 lg:text-left">
                     <p className="description-container">
-                        A custom Arch Linux–based distribution focused on simplicity, reproducibility, and a unique visual identity under the “X” branding.
+                        A custom Arch Linux–based Spin focused on simplicity, reproducibility, and a unique visual identity under the “X” branding.
                     </p>
                     <p className="description-container">
                         Fully built from official Arch repositories using the standard mkarchiso workflow.
