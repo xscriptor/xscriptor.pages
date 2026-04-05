@@ -46,7 +46,7 @@ const PreviewsHome: React.FC = () => {
     <div ref={containerRef} className={styles.previewsContainer}>
       {/* Literary Project Section */}
       <section className={styles.section}>
-        <a href="https://www.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>Literary Project</h2></a>
+        <a href="https://www.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>Literary</h2></a> <a href="https://www.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>& Artistic</h2></a><h2 className={styles.sectionTitle}> Projects</h2>
         <div className={styles.literaryGrid}>
           {literaryImages.map((image, index) => (
             <div key={index} className={`${styles.imageWrapper} ${styles[`literary${index + 1}`]}`}>
