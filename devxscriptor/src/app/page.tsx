@@ -76,10 +76,23 @@ export default function Home() {
             autoShuffle={true}
             shuffleInterval={5000}
             text={
-              <p className="description-container text-xl md:text-2xl leading-relaxed">
-                Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and colors.
-              </p>
+              <div className="flex flex-col text-right gap-4">
+                <p className="">
+                  Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and colors.
+                </p>
+                <p className="">
+                  <em><a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X </a> &middot; The definitive spin of arch linux growing as a distro.</em>
+                </p>
+                <p className="">
+                  <strong><a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">Code X Themes </a></strong> &middot; accessibility starts from the code.
+                </p>
+                <p className="">
+                  <strong><a href="https://github.com/xscriptor/xwa" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">XWA </a></strong> &middot; our own system to <em>analyze</em> and <em>solve</em> <strong>specific needs</strong>
+                </p>
+                <p>for any kind of project.</p>
+              </div>
             }
+            textAlign="right"
             images={xMicroGalleryTextImages}
           />
         </div>

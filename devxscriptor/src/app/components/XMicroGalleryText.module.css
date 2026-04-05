@@ -40,6 +40,10 @@
   text-align: right;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 @media (max-width: 1023px) {
   .textLeft, .textRight {
     text-align: center;

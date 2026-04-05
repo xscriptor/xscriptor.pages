@@ -12,6 +12,7 @@ interface XMicroGalleryTextProps {
   images: [GalleryImage, GalleryImage, GalleryImage];
   text: React.ReactNode;
   textPosition?: 'left' | 'right';
+  textAlign?: 'left' | 'right' | 'center';
   autoShuffle?: boolean;
   shuffleInterval?: number;
 }
@@ -20,6 +21,7 @@ const XMicroGalleryText: React.FC<XMicroGalleryTextProps> = ({
   images, 
   text, 
   textPosition = 'left',
+  textAlign = 'left',
   autoShuffle = false,
   shuffleInterval = 5000
 }) => {
@@ -70,9 +72,15 @@ const XMicroGalleryText: React.FC<XMicroGalleryTextProps> = ({
 
   const isTextRight = textPosition === 'right';
 
+  const alignClass = {
+    left: styles.textLeft,
+    right: styles.textRight,
+    center: styles.textCenter,
+  }[textAlign];
+
   return (
     <div ref={containerRef} className={`${styles.container} ${isTextRight ? styles.reverse : ''}`}>
-      <div className={`${styles.textContent} ${isTextRight ? styles.textRight : styles.textLeft} ${isVisible ? styles.visible : ''}`}>
+      <div className={`${styles.textContent} ${alignClass} ${isVisible ? styles.visible : ''}`}>
         {typeof text === 'string' ? (
           <div dangerouslySetInnerHTML={{ __html: text }} />
         ) : (
