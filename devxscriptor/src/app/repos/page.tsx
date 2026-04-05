@@ -118,6 +118,12 @@ export default async function ReposPage() {
   const { repos, isStaticFallback } = await fetchRepos();
 
   return (
+    <div>
+      <h1><span className="inline lg:block">Resource <em>Vault</em></span>
+          <span className="inline lg:block">Compendium of<em> technical artifacts </em></span>
+           <span className="inline lg:block"> and  <em>engineering essentials</em></span>
+          </h1>
     <ReposClient repos={repos} isStaticFallback={isStaticFallback} />
+    </div>
   );
 }
