@@ -23,8 +23,7 @@ export default function Home() {
     { src: '/images/resources/helix/helix01.png', alt: 'Xscriptor theme for helix' },
     { src: '/images/resources/jetbrains/preview2.png', alt: 'Xscriptor theme for jetbrains' },
     { src: '/images/resources/xfetch/preview1.png', alt: 'Xfetch tool for fetch the system information' },
-    { src: '/images/previews/preview0014.webp', alt: 'Artistic concept 9' },
-    { src: '/images/previews/preview0015.webp', alt: 'Artistic concept 10' },
+    { src: '/images/resources/hyprland/preview02.png', alt: 'Xscriptor Hyprland Config' },
   ];
 
   const xpreviewImages = [
