@@ -4,6 +4,7 @@ import SkillNetwork from "./components/SkillNetwork";
 import TypeWriter from "./components/typewriter/typewrite";
 import PreviewsHome from "./components/previewshome/PreviewsHome";
 import HeroImageSlider from "./components/HeroImageSlider";
+import XMicroGalleryText from "./components/XMicroGalleryText";
 
 export default function Home() {
   const heroSliderImages = [
@@ -11,6 +12,16 @@ export default function Home() {
     { src: '/images/previews/preview0003.webp', alt: 'Vista previa de proyecto 2' },
     { src: '/images/previews/preview0005.webp', alt: 'Vista previa de proyecto 3' },
     { src: '/images/previews/preview0007.webp', alt: 'Vista previa de proyecto 4' },
+  ];
+
+  const xMicroGalleryTextImages: [
+    { src: string; alt: string },
+    { src: string; alt: string },
+    { src: string; alt: string }
+  ] = [
+    { src: '/images/previews/preview0006.webp', alt: 'Artistic concept 1' },
+    { src: '/images/previews/preview0008.webp', alt: 'Artistic concept 2' },
+    { src: '/images/previews/preview0007.webp', alt: 'Artistic concept 3' },
   ];
 
   return (
@@ -27,6 +38,8 @@ export default function Home() {
           </div>
 
           {/* Separator */}
+          
+          
           <div className="hidden lg:block w-px bg-gradient-to-b from-transparent via-gray-400 to-transparent opacity-50"></div>
 
           <div className="flex-1 text-right">
@@ -52,6 +65,27 @@ export default function Home() {
           </div>
         </div>
         {/* Horizontal Separator */}
+
+        
+        <h2><em>Selected works</em></h2>
+        
+        {/* XMicroGalleryText Component */}
+        <div className="w-full mt-16 lg:mt-32">
+          <XMicroGalleryText
+            textPosition="left"
+            autoShuffle={true}
+            shuffleInterval={5000}
+            text={
+              <p className="description-container text-xl md:text-2xl leading-relaxed">
+                Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and colors.
+              </p>
+            }
+            images={xMicroGalleryTextImages}
+          />
+        </div>
+
+
+
         <div className="w-full flex justify-center my-16">
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-50"></div>
         </div>
@@ -59,7 +93,10 @@ export default function Home() {
           <PreviewsHome />
         </div>
         
+        
+        
         {/* Horizontal Separator */}
+        
         <div className="w-full flex justify-center my-16">
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-50"></div>
         </div>

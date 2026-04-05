@@ -408,6 +408,9 @@ h1 {
 }
 
 h2 {
+  font-size: 1rem;
+  font-weight: 200;
+  margin-bottom: 2rem;
   text-align: center;
   color: var(--primary);
   width: 100%;
@@ -438,8 +441,15 @@ h3 em {
   text-align: inherit;
 }
 
+:root h1 em,
+:root h2 em,
+:root h3 em,
 :root.light h1 em,
-:root.dark h1 em {
+:root.light h2 em,
+:root.light h3 em,
+:root.dark h1 em,
+:root.dark h2 em,
+:root.dark h3 em {
   color: var(--primary);
   font-style: italic;
 }
@@ -448,17 +458,26 @@ h3 em {
   h1 {
     font-size: 2.15rem;
   }
+  h2 {
+    font-size: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {
   h1 {
     font-size: 2.45rem;
   }
+  h2 {
+    font-size: 1.875rem;
+  }
 }
 
 @media (min-width: 1024px) {
   h1 {
     font-size: 2.9rem;
+  }
+  h2 {
+    font-size: 2.25rem;
   }
 }
 
