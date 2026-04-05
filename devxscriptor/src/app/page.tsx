@@ -91,9 +91,16 @@ export default function Home() {
                   <strong><a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">Code X Themes </a></strong> &middot; accessibility starts from the code.
                 </p>
                 <p className="">
-                  <strong><a href="https://github.com/xscriptor/xwa" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">XWA </a></strong> &middot; our own system to <em>analyze</em> and <em>solve</em> <strong>specific needs</strong>
+                  <strong><a href="https://github.com/xscriptor/xwa" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">XWA </a></strong> &middot; Our own system to <em>analyze</em> and <em>solve</em> <strong>specific needs</strong>
                 </p>
                 <p><em>for any kind of project.</em></p>
+                <p><em>
+                  <a href="https://github.com/xscriptor/xpm" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">XPM </a> &middot; The future package manager of X and
+                  <a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> XPKG</a> &middot; The definitive packaging tool for developers in X.
+                </em></p>
+                <p>
+                  <a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X </a> &middot; The definitive spin of arch linux growing as a distro.
+                </p>
               </div>
             }
             textAlign="right"
