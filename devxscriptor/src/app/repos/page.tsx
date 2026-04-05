@@ -119,10 +119,14 @@ export default async function ReposPage() {
 
   return (
     <div>
-      <h1><span className="inline lg:block">Resource <em>Vault</em></span>
-          <span className="inline lg:block">Compendium of<em> technical artifacts </em></span>
-           <span className="inline lg:block"> and  <em>engineering essentials</em></span>
-          </h1>
+
+      <h1>
+        <span className="inline lg:block">Resource <em>vault</em></span>
+      </h1>
+          <p className='pb-10'><span className="inline lg:block text-xl text-right">Compendium of <em>technical artifacts </em></span>
+           <span className="inline lg:block text-xl text-right"> & <em>engineering essentials</em></span>
+          </p>
+
     <ReposClient repos={repos} isStaticFallback={isStaticFallback} />
     </div>
   );

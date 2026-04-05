@@ -11,6 +11,11 @@ export const metadata = {
 export default function Portfolio() {
   return (
     <div>
+      <h1><span className="inline lg:block">Portfolio <em>timeline</em></span>
+        </h1>
+          <p className='pb-10'><span className="inline lg:block text-xl text-right">Chronicle of <em>professional evolution </em></span>
+           <span className="inline lg:block text-xl text-right"> & <em>technical milestones</em></span>
+          </p>
       <div className="animate-fade-in-up"> 
         <PortfolioTimeline />
       </div>

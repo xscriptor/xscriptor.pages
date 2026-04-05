@@ -61,9 +61,10 @@ export default function ResourcesPage() {
     <div className="">
 
         <h1><span className="inline lg:block">Development <em>lab</em></span>
-          <span className="inline lg:block">Engineering <em>Innovative Solutions </em></span>
-           <span className="inline lg:block"> & <em>Open Source Architectures</em></span>
-          </h1>
+        </h1>
+          <p className='pb-10'><span className="inline lg:block text-xl text-right">Engineering <em>Innovative Solutions </em></span>
+           <span className="inline lg:block text-xl text-right"> & <em>Open Source Architectures</em></span>
+          </p>
 
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {repos.map((repo, index) => (
