@@ -89,7 +89,7 @@ export default function Home() {
                 <p className="">
                   <strong><a href="https://github.com/xscriptor/xwa" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">XWA </a></strong> &middot; our own system to <em>analyze</em> and <em>solve</em> <strong>specific needs</strong>
                 </p>
-                <p>for any kind of project.</p>
+                <p><em>for any kind of project.</em></p>
               </div>
             }
             textAlign="right"

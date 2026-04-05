@@ -44,10 +44,16 @@
   text-align: center;
 }
 
-@media (max-width: 1023px) {
-  .textLeft, .textRight {
-    text-align: center;
-  }
+.textContent p,
+.textContent div,
+.textContent span,
+.textContent em,
+.textContent strong,
+.textContent a {
+  text-align: inherit;
+  max-width: none;
+  margin-left: unset;
+  margin-right: unset;
 }
 
 .gallery {
