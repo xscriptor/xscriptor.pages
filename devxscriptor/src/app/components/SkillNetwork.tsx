@@ -12,36 +12,56 @@ interface Skill {
 }
 
 const skillsData: Skill[] = [
-  // Core
-  { name: "JavaScript", x: 50, y: 50, description: "The heart of modern web development", connections: [1, 2, 4, 8, 14], category: "core" },
-  { name: "TypeScript", x: 65, y: 45, description: "JavaScript with syntax for types", connections: [0, 2, 4, 11, 14], category: "core" },
+  // Core (0–2)
+  { name: "JavaScript", x: 50, y: 45, description: "The heart of modern web development", connections: [1, 3, 4, 9, 15, 34, 16], category: "core" },
+  { name: "TypeScript", x: 62, y: 38, description: "JavaScript with syntax for types", connections: [0, 2, 3, 4, 5, 9, 20, 21, 34], category: "core" },
+  { name: "Rust", x: 28, y: 45, description: "Systems programming for CLI tools & package managers", connections: [1, 13, 14, 19, 23, 24, 33, 34], category: "core" },
 
-  // Frontend Main
-  { name: "React", x: 60, y: 30, description: "Library for web and native user interfaces", connections: [0, 1, 3, 4, 11, 15], category: "frontend" },
-  { name: "Next.js", x: 75, y: 25, description: "The React Framework for the Web", connections: [2, 1, 11], category: "frontend" },
-  { name: "Tailwind", x: 45, y: 35, description: "Rapidly build modern websites", connections: [2, 11], category: "frontend" },
+  // Frontend (3–8)
+  { name: "React", x: 60, y: 25, description: "Library for web and native user interfaces", connections: [0, 1, 4, 5, 6, 9, 20, 28, 34], category: "frontend" },
+  { name: "Tailwind", x: 48, y: 30, description: "Rapidly build modern websites", connections: [0, 1, 3, 7, 25, 28, 34], category: "frontend" },
+  { name: "Next.js", x: 72, y: 20, description: "The React Framework for the Web", connections: [1, 3, 9, 15, 20, 34], category: "frontend" },
+  { name: "React Native", x: 72, y: 10, description: "Create native apps for Android & iOS", connections: [1, 3, 29, 34], category: "frontend" },
+  { name: "UI/UX", x: 38, y: 20, description: "Designing intuitive user experiences", connections: [4, 8, 25, 28, 34], category: "frontend" },
+  { name: "Glassmorphism", x: 28, y: 22, description: "Frosted glass aesthetic principles", connections: [7, 25, 34], category: "frontend" },
 
-  // Frontend Specialized
-  { name: "React Native", x: 70, y: 15, description: "Create native apps for Android & iOS", connections: [2, 1], category: "frontend" },
-  { name: "UI/UX", x: 35, y: 25, description: "Designing intuitive user experiences", connections: [4, 7], category: "frontend" },
-  { name: "Glassmorphism", x: 25, y: 30, description: "Frosted glass aesthetic principles", connections: [6, 4], category: "frontend" },
-  { name: "Accessibility", x: 40, y: 15, description: "Inclusive design for all users", connections: [6, 2], category: "frontend" },
+  // Backend (9–12)
+  { name: "Node.js", x: 55, y: 60, description: "JavaScript runtime built on Chrome's V8", connections: [0, 1, 5, 10, 11, 12, 15, 34], category: "backend" },
+  { name: "PHP", x: 42, y: 65, description: "Server-side scripting language", connections: [0, 9, 12, 34], category: "backend" },
+  { name: "NoSQL", x: 68, y: 70, description: "Flexible database schemas", connections: [0, 9, 34], category: "backend" },
+  { name: "MySQL", x: 28, y: 62, description: "Relational open source database", connections: [9, 10, 22, 34], category: "backend" },
 
-  // Backend
-  { name: "Node.js", x: 55, y: 65, description: "JavaScript runtime built on Chrome's V8", connections: [0, 1, 9, 10, 12], category: "backend" },
-  { name: "PHP", x: 40, y: 70, description: "Server-side scripting language", connections: [0, 12], category: "backend" },
-  { name: "NoSQL", x: 70, y: 75, description: "Flexible database schemas", connections: [8, 0], category: "backend" },
-  { name: "MySQL", x: 25, y: 65, description: "Relational open source database", connections: [8, 9], category: "backend" },
+  // Systems / Tools (13–16)
+  { name: "Linux", x: 18, y: 50, description: "Open source operating system & distro building", connections: [2, 14, 19, 22, 24, 26, 34], category: "tool" },
+  { name: "Bash", x: 10, y: 42, description: "Shell command language & automation", connections: [2, 13, 19, 23, 26, 34], category: "tool" },
+  { name: "Git", x: 50, y: 82, description: "Version control system", connections: [1, 5, 9, 21, 32, 34], category: "tool" },
+  { name: "CyberSec", x: 10, y: 75, description: "Security principles & OSINT analysis", connections: [13, 14, 22, 27, 34], category: "tool" },
 
-  // Systems / Tools
-  { name: "Linux", x: 30, y: 55, description: "Open source operating system", connections: [8, 9, 14], category: "tool" },
-  { name: "Bash", x: 20, y: 50, description: "Shell command language", connections: [12], category: "tool" },
-  { name: "Git", x: 50, y: 85, description: "Version control system", connections: [1, 8, 3], category: "tool" },
+  // Soft / Other (17–18)
+  { name: "Bilingual", x: 88, y: 55, description: "Fluent in English and Spanish", connections: [18, 34], category: "core" },
+  { name: "Remote", x: 88, y: 75, description: "Effective distributed collaboration", connections: [17, 34], category: "core" },
 
-  // Soft / Other
-  { name: "CyberSec", x: 15, y: 80, description: "Security principles and practices", connections: [12, 13], category: "tool" },
-  { name: "Bilingual", x: 85, y: 60, description: "Fluent in English and Spanish", connections: [], category: "core" },
-  { name: "Remote", x: 85, y: 80, description: "Effective distributed collaboration", connections: [16, 17], category: "core" },
+  // Ecosystem skills (19–27)
+  { name: "Arch/ISO", x: 10, y: 58, description: "Custom Arch Linux spin & mkarchiso builds", connections: [2, 13, 14, 26, 34], category: "tool" },
+  { name: "Vite", x: 78, y: 32, description: "Fast frontend tooling for web apps", connections: [1, 3, 5, 34], category: "frontend" },
+  { name: "CI/CD", x: 62, y: 88, description: "GitHub Actions, automated workflows", connections: [1, 15, 34], category: "tool" },
+  { name: "Python", x: 35, y: 75, description: "Scripting, badge generation & automation", connections: [12, 13, 16, 27, 31, 34], category: "backend" },
+  { name: "TUI/Ratatui", x: 18, y: 35, description: "Terminal UI frameworks for Rust CLI apps", connections: [2, 14, 24, 34], category: "tool" },
+  { name: "Wayland", x: 10, y: 28, description: "Hyprland compositor & tiling window configs", connections: [13, 23, 33, 34], category: "tool" },
+  { name: "CSS3", x: 40, y: 12, description: "Theme design for editors, terminals & web", connections: [4, 7, 8, 28, 31, 34], category: "frontend" },
+  { name: "Zsh", x: 10, y: 65, description: "Advanced shell customization & plugins", connections: [13, 14, 19, 34], category: "tool" },
+  { name: "OSINT", x: 22, y: 80, description: "Web analysis dashboards & security research", connections: [16, 22, 34], category: "tool" },
+
+  // Additional skills (28–33)
+  { name: "A11Y", x: 48, y: 15, description: "Accessibility & usability best practices", connections: [3, 4, 7, 25, 34], category: "frontend" },
+  { name: "Dart/Flutter", x: 82, y: 42, description: "Cross-platform mobile apps & crypto libraries", connections: [1, 6, 30, 34], category: "core" },
+  { name: "Kotlin", x: 78, y: 58, description: "JetBrains IDE plugin development", connections: [29, 34], category: "backend" },
+  { name: "SVG", x: 30, y: 10, description: "Vector graphics for badges, icons & branding", connections: [22, 25, 34], category: "frontend" },
+  { name: "Markdown", x: 40, y: 88, description: "Documentation across all projects", connections: [15, 34], category: "tool" },
+  { name: "TOML/YAML", x: 22, y: 18, description: "Configuration formats for tools & compositors", connections: [2, 24, 34], category: "tool" },
+
+  // Hub (34)
+  { name: "X", x: 50, y: 50, description: "Development", connections: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33], category: "core" },
 ];
 
 export default function SkillNetwork() {
@@ -147,7 +167,7 @@ export default function SkillNetwork() {
         })}
 
         <div className="absolute bottom-6 left-6 text-xs text-[var(--text-muted)] font-mono">
-          constellation_view: interactive
+          X-constellation_view: interactive
         </div>
       </div>
 
