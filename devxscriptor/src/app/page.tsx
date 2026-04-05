@@ -73,7 +73,7 @@ export default function Home() {
             </p>
             <h2 className="font-bold leading-tight">
               <span className="inline-block text-3xl md:text-4xl lg:text-5xl align-middle">
-               X <TypeWriter data={["scriptor", "Cypher", "Developer", "Designer"]} />
+               X <TypeWriter data={["scriptor", "Cypher", "Developer", "Designer", "Writer", "Programmer", "Coder", "Creator", "Builder", "Innovator", "Problem Solver", "Researcher", "Analyst", "Technologist"]} />
               </span>
             </h2>
             <p className="description-container">Responsive web applications are the main craft, with occasional collaborations on software development. Component-based architecture, performance, and scalable code across different languages are always prioritized, while adapting to the needs of each project. The previews below highlight work with TypeScript, JavaScript, CSS3, Tailwind, PHP, static exports, and hands-on API integration.</p>
@@ -82,7 +82,7 @@ export default function Home() {
         {/* Horizontal Separator */}
 
         
-        <h2><em>Selected works</em></h2>
+        <h2 className="flex justify-left"><em>Selected works</em></h2>
         
         {/* XMicroGalleryText Component */}
         <div className="w-full mt-16 lg:mt-32">
