@@ -27,6 +27,19 @@ export default function Home() {
     { src: '/images/previews/preview0015.webp', alt: 'Artistic concept 10' },
   ];
 
+  const xpreviewImages = [
+    { src: '/images/previews/preview0001.webp', alt: 'Literary Project 1' },
+    { src: '/images/previews/preview0002.webp', alt: 'Literary Project 2' },
+    { src: '/images/previews/preview0003.webp', alt: 'Literary Project 3' },
+    { src: '/images/previews/preview0004.webp', alt: 'Literary Project 4' },
+  ];
+
+  const xpreviewImagestwo = [
+    { src: '/images/previews/preview0006.webp', alt: 'Artistic Project 1' },
+    { src: '/images/previews/preview0005.webp', alt: 'Artistic Project 2' },
+    { src: '/images/previews/preview0007.webp', alt: 'Artistic Project 3' },
+  ];
+
   return (
     <div className={`animate-fade-in-up min-h-screen flex flex-col items-center justify-center px-4`}>
 
@@ -83,6 +96,15 @@ export default function Home() {
                 <p className="">
                   Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and expressions.
                 </p>
+                <p>
+                  <strong>Around web development: </strong>
+                   <a href="https://www.xscriptor.com" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">xscriptor.com </a> &middot; 
+                   <a href="https://art.xscriptor.com" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> art.xscriptor.com </a> &middot;  
+                   <a href="https://xscriptor.github.io/x-repo" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> xscriptor.github.io/x-linux </a> &middot; 
+                   <a href="https://xscriptor.github.io/badges" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> xscriptor.github.io/badges </a> &middot; 
+                   <a href="https://xscriptor.github.io/xwall" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> xscriptor.github.io/xwall </a> &middot; <em>and more... through non personal projects.</em>
+                  
+                </p>
                 <p className="">
                   <em><a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X </a> &middot; The definitive spin of arch linux growing as a distro.</em>
                 </p>
@@ -109,6 +131,8 @@ export default function Home() {
                 <p>
                   <a href="https://github.com/xscriptor/terminal" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X Terminal Schemes</a> &middot; Schemes to increase <em>productivity</em> on your <strong>environment</strong>.
                 </p>
+                <p><em>Do you want to join team X or need help with some development?</em> <strong><a href="mailto:x@xscriptor.com" className="text-[var(--primary)] hover:underline">Contact me</a></strong>.
+                </p>
               </div>
             }
             textAlign="right"
@@ -122,7 +146,23 @@ export default function Home() {
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-gray-400 to-transparent opacity-50"></div>
         </div>
         <div>
-          <PreviewsHome />
+          <PreviewsHome
+            layout={1}
+            title={
+              <>
+                <a href="https://www.xscriptor.com" target="_blank" rel="noopener noreferrer">Literary</a>
+                {' '}&amp;{' '}
+                <a href="https://art.xscriptor.com" target="_blank" rel="noopener noreferrer">Artistic</a>
+                {' Projects'}
+              </>
+            }
+            images={xpreviewImages}
+          />
+          <PreviewsHome
+            layout={2}
+            images={xpreviewImagestwo}
+          />
+          
         </div>
         
         

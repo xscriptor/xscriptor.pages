@@ -3,7 +3,24 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './PreviewsHome.module.css';
 
-const PreviewsHome: React.FC = () => {
+interface PreviewImage {
+  src: string;
+  alt: string;
+}
+
+interface PreviewsHomeProps {
+  images: PreviewImage[];
+  layout?: 1 | 2 | 3;
+  title?: React.ReactNode;
+}
+
+const LAYOUT_PREFIXES: Record<number, string> = {
+  1: 'layout1',
+  2: 'layout2',
+  3: 'layout3',
+};
+
+const PreviewsHome: React.FC<PreviewsHomeProps> = ({ images, layout = 1, title }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,47 +44,28 @@ const PreviewsHome: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Literary project images (preview0001 to preview0004)
-  const literaryImages = [
-    { src: '/images/previews/preview0001.webp', alt: 'Literary Project 1' },
-    { src: '/images/previews/preview0002.webp', alt: 'Literary Project 2' },
-    { src: '/images/previews/preview0003.webp', alt: 'Literary Project 3' },
-    { src: '/images/previews/preview0004.webp', alt: 'Literary Project 4' }
-  ];
+  const gridClass = {
+    1: styles.gridLayout1,
+    2: styles.gridLayout2,
+    3: styles.gridLayout3,
+  }[layout];
 
-  // Artistic project images (reordered: preview0006 first, then preview0005 and preview0007)
-  const artisticImages = [
-    { src: '/images/previews/preview0006.webp', alt: 'Artistic Project 1' },
-    { src: '/images/previews/preview0005.webp', alt: 'Artistic Project 2' },
-    { src: '/images/previews/preview0007.webp', alt: 'Artistic Project 3' }
-  ];
+  const prefix = LAYOUT_PREFIXES[layout];
 
   return (
     <div ref={containerRef} className={styles.previewsContainer}>
-      {/* Literary Project Section */}
       <section className={styles.section}>
-        <a href="https://www.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>Literary</h2></a> <a href="https://www.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>& Artistic</h2></a><h2 className={styles.sectionTitle}> Projects</h2>
-        <div className={styles.literaryGrid}>
-          {literaryImages.map((image, index) => (
-            <div key={index} className={`${styles.imageWrapper} ${styles[`literary${index + 1}`]}`}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className={styles.previewImage}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Artistic Project Section */}
-      <section className={styles.section}>
-        <a href="https://art.xscriptor.com" target='_blank' rel='noopener noreferrer'><h2 className={styles.sectionTitle}>Artistic Project</h2></a>
-        <div className={styles.artisticGrid}>
-          {artisticImages.map((image, index) => (
-            <div key={index} className={`${styles.imageWrapper} ${styles[`artistic${index + 1}`]}`}>
+        {title && (
+          <div className={styles.titleRow}>
+            {title}
+          </div>
+        )}
+        <div className={gridClass}>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`${styles.imageWrapper} ${styles[`${prefix}_${index + 1}`] || ''}`}
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
