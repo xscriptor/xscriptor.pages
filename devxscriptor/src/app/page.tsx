@@ -99,7 +99,13 @@ export default function Home() {
                   <a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline"> XPKG</a> &middot; The definitive packaging tool for developers in X.
                 </em></p>
                 <p>
-                  <a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X </a> &middot; The definitive spin of arch linux growing as a distro.
+                  <a href="https://github.com/xscriptor/xfetch" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">Xfetch </a> &middot; The modern alternative to <em>fastfetch</em>.
+                </p>
+                <p>
+                  <a href="https://github.com/xscriptor/jetbrains" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X JetBrains</a> &middot; A collection of <em>themes</em> for <strong>JetBrains</strong> IDEs.
+                </p>
+                <p>
+                  <a href="https://github.com/xscriptor/hyprland" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X Hyprland</a> &middot; Perfect desktop development <em>environment</em> for <strong>productivity</strong> on your <strong>own system</strong>.
                 </p>
               </div>
             }
