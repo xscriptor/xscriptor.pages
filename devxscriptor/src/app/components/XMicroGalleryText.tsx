@@ -9,13 +9,15 @@ interface GalleryImage {
 }
 
 interface XMicroGalleryTextProps {
-  images: [GalleryImage, GalleryImage, GalleryImage];
+  images: GalleryImage[];
   text: React.ReactNode;
   textPosition?: 'left' | 'right';
   textAlign?: 'left' | 'right' | 'center';
   autoShuffle?: boolean;
   shuffleInterval?: number;
 }
+
+const DISPLAY_COUNT = 3;
 
 const XMicroGalleryText: React.FC<XMicroGalleryTextProps> = ({ 
   images, 
@@ -26,26 +28,25 @@ const XMicroGalleryText: React.FC<XMicroGalleryTextProps> = ({
   shuffleInterval = 5000
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [currentImages, setCurrentImages] = React.useState(images);
+  const [startIndex, setStartIndex] = React.useState(0);
+
+  const visibleImages = React.useMemo(() => {
+    const result: GalleryImage[] = [];
+    for (let i = 0; i < DISPLAY_COUNT; i++) {
+      result.push(images[(startIndex + i) % images.length]);
+    }
+    return result;
+  }, [images, startIndex]);
 
   React.useEffect(() => {
-    setCurrentImages(images);
-  }, [images]);
-
-  React.useEffect(() => {
-    if (!autoShuffle) return;
+    if (!autoShuffle || images.length <= DISPLAY_COUNT) return;
 
     const intervalId = setInterval(() => {
-      setCurrentImages((prev) => {
-        const next = [...prev] as [GalleryImage, GalleryImage, GalleryImage];
-        const first = next.shift();
-        if (first) next.push(first);
-        return next;
-      });
+      setStartIndex((prev) => (prev + 1) % images.length);
     }, shuffleInterval);
 
     return () => clearInterval(intervalId);
-  }, [autoShuffle, shuffleInterval]);
+  }, [autoShuffle, shuffleInterval, images.length]);
 
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -90,7 +91,7 @@ const XMicroGalleryText: React.FC<XMicroGalleryTextProps> = ({
       
       <div className={styles.gallery}>
         <div className={styles.artisticGrid}>
-          {currentImages.map((image, index) => (
+          {visibleImages.map((image, index) => (
             <motion.div 
               layout
               key={image.src} 

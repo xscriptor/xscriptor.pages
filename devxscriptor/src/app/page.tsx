@@ -14,18 +14,17 @@ export default function Home() {
     { src: '/images/previews/preview0007.webp', alt: 'Vista previa de proyecto 4' },
   ];
 
-  const xMicroGalleryTextImages: [
-    { src: string; alt: string },
-    { src: string; alt: string },
-    { src: string; alt: string },
-    { src: string; alt: string },
-    { src: string; alt: string }
-  ] = [
+  const xMicroGalleryTextImages = [
     { src: '/images/previews/preview0006.webp', alt: 'Artistic concept 1' },
-    { src: '/images/previews/preview0008.webp', alt: 'Artistic concept 2' },
-    { src: '/images/previews/preview0007.webp', alt: 'Artistic concept 3' },
-    { src: '/images/previews/preview0009.webp', alt: 'Artistic concept 4' },
-    { src: '/images/previews/preview0010.webp', alt: 'Artistic concept 5' },
+    { src: '/images/resources/obsidian/preview07.png', alt: 'Obsidian Xscriptor theme' },
+    { src: '/images/resources/vscode/vscode02.jpg', alt: 'Code and forks Xscriptor theme' },
+    { src: '/images/resources/vscode/vscode04.jpg', alt: 'XGlas Xscriptor Extension for code and forks' },
+    { src: '/images/resources/powershell/preview2.jpg', alt: 'Xscriptor theme for powershell' },
+    { src: '/images/resources/helix/helix01.png', alt: 'Xscriptor theme for helix' },
+    { src: '/images/resources/jetbrains/preview2.png', alt: 'Xscriptor theme for jetbrains' },
+    { src: '/images/resources/xfetch/preview1.png', alt: 'Xfetch tool for fetch the system information' },
+    { src: '/images/previews/preview0014.webp', alt: 'Artistic concept 9' },
+    { src: '/images/previews/preview0015.webp', alt: 'Artistic concept 10' },
   ];
 
   return (
@@ -82,7 +81,7 @@ export default function Home() {
             text={
               <div className="flex flex-col text-right gap-4">
                 <p className="">
-                  Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and colors.
+                  Exploring <strong>innovative</strong> concepts and pushing the boundaries of <em>visual</em> storytelling. Each project represents a unique journey through forms and expressions.
                 </p>
                 <p className="">
                   <em><a href="https://github.com/xscriptor/x" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X </a> &middot; The definitive spin of arch linux growing as a distro.</em>
@@ -106,6 +105,9 @@ export default function Home() {
                 </p>
                 <p>
                   <a href="https://github.com/xscriptor/hyprland" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X Hyprland</a> &middot; Perfect desktop development <em>environment</em> for <strong>productivity</strong> on your <strong>own system</strong>.
+                </p>
+                <p>
+                  <a href="https://github.com/xscriptor/terminal" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] hover:underline">X Terminal Schemes</a> &middot; Schemes to increase <em>productivity</em> on your <strong>environment</strong>.
                 </p>
               </div>
             }
