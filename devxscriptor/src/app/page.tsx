@@ -44,8 +44,8 @@ export default function Home() {
 
       <div className="w-full max-w-6xl mx-auto text-center">
         {/* Main Content Section - Side by Side */}
-        <h1><span className="inline lg:block">Discover the <em>depth</em></span>
-          <span className="inline lg:block">and <em>finesse</em></span>
+        <h1><span className="inline lg:block">Discover the <em>depth </em></span>
+          <span className="inline lg:block">and <em>finesse </em></span>
           of our work</h1>
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-16 mb-16 pt-2 lg:pt-3">
           <div className="w-full flex-[1.1] lg:max-w-2xl">
