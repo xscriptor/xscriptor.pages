@@ -17,11 +17,15 @@ export default function Home() {
   const xMicroGalleryTextImages: [
     { src: string; alt: string },
     { src: string; alt: string },
+    { src: string; alt: string },
+    { src: string; alt: string },
     { src: string; alt: string }
   ] = [
     { src: '/images/previews/preview0006.webp', alt: 'Artistic concept 1' },
     { src: '/images/previews/preview0008.webp', alt: 'Artistic concept 2' },
     { src: '/images/previews/preview0007.webp', alt: 'Artistic concept 3' },
+    { src: '/images/previews/preview0009.webp', alt: 'Artistic concept 4' },
+    { src: '/images/previews/preview0010.webp', alt: 'Artistic concept 5' },
   ];
 
   return (
