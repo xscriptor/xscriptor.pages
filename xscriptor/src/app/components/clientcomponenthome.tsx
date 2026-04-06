@@ -123,6 +123,7 @@ const sextafrase: WordConfig[] = [
       <div className="text-center">
         <XInteractivePhrase words={primerafrase} as="h1" />
         </div>
+        
         <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side">
           <XInteractivePhrase words={segundafrase} as="p" />
           <XInteractivePhrase words={tercerafrase} as="p" />
@@ -131,10 +132,7 @@ const sextafrase: WordConfig[] = [
           <XInteractivePhrase words={sextafrase} as="p" />
         </XZigZagLayout>
 
-              <section className={styles.section}>
-      </section>
-
-
+        <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
       <section className={styles.section}>
         <div className={styles.containerInner}>
           {/* Bloque 1 */}
@@ -152,17 +150,7 @@ const sextafrase: WordConfig[] = [
                 />
               </div>
             </div>
-          </div>
-          {/*Botón de ir a la colección*/}
-            
-            <div className="flex justify-center mt-8 gap-4">
-              <XSeparator variant="dashed" />
-            </div>
-
-          {/* Bloque 2 */}
-          <div className={styles.flexBlock}>
-
-            <div className={styles.videoContainer}>
+             <div className={styles.videoContainer}>
               <div className={styles.videoWrapper}>
                 <video
                   src="/background03x.mp4"
@@ -175,8 +163,8 @@ const sextafrase: WordConfig[] = [
                 />
               </div>
             </div>
-            
           </div>
+          <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
         </div>
       </section>
       
