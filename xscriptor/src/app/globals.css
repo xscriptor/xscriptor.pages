@@ -47,7 +47,6 @@ p {
   font-size: clamp(18px, 2.5vw, 20px);
   margin-bottom: 2vw;
   margin-top: 2vw;
-  text-align: justify;
   padding-right: 15vw;
   padding-left: 15vw;
 }
