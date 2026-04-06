@@ -7,78 +7,43 @@
 
 .contactMain {
   min-height: 100vh;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding: 2.5rem 1rem;
   max-width: 80rem;
   margin: 0 auto;
   font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
 }
 
-.contactHeader {
-  flex: 1;
-  position: relative;
-  min-height: 224px;
+/* Layout: form truly centered, social links anchored right */
+.contentLayout {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 3rem;
 }
 
 @media (min-width: 1024px) {
-  .contactHeader {
-    text-align: center;
+  .contentLayout {
+    position: relative;
+    display: block;
   }
 }
 
-.contactTitle {
-  font-size: 1.5rem;
-  letter-spacing: 0.025em;
-  color: var(--foreground);
-  margin-bottom: 1.5rem;
+.formSide {
+  display: flex;
+  justify-content: center;
 }
 
-.contactForm {
-  padding-top: 1.5rem;
-}
-
-.socialSection {
-  margin-top: 1.5rem;
+.socialSide {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.socialTitle {
-  font-size: 1.125rem;
-  color: var(--foreground);
-  text-align: center;
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  letter-spacing: 0.025em;
-}
-
-@media (min-width: 640px) {
-  .socialTitle {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .socialTitle {
-    font-size: 1.125rem;
-  }
-}
-
 @media (min-width: 1024px) {
-  .socialTitle {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .socialTitle {
-    font-size: 1.125rem;
+  .socialSide {
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: flex-end;
   }
 }
 
@@ -87,7 +52,12 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .socialLinks {
+    align-items: flex-end;
+  }
 }
 
 .socialLink {
@@ -152,16 +122,12 @@
 }
 
 @media (max-width: 480px) {
-  .contactHeader {
-    padding: 1rem;
-  }
-  
   .socialLink {
     width: 12rem;
     padding: 0.5rem 0.75rem;
     font-size: 0.85rem;
   }
-  
+
   .socialLinks {
     gap: 0.75rem;
   }

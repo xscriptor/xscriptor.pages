@@ -259,9 +259,9 @@ export function PortfolioTimeline() {
     {
       title: "Present",
       content: (
-        <div key="timeline-present">
-          <h3 className="text-yellow-200">X development</h3>
-          <ul className="list-disc pl-5 text-neutral-800 dark:text-neutral-200 text-sm md:text-base space-y-2">
+        <div key="timeline-present" style={{ color: 'var(--foreground)' }}>
+          <h3 style={{ color: 'var(--primary)' }}>X development</h3>
+          <ul className="list-disc pl-5 text-sm md:text-base space-y-2" style={{ color: 'var(--foreground)' }}>
             <li key="present-degree">
               Completed an{" "}
               <strong>
@@ -289,9 +289,20 @@ export function PortfolioTimeline() {
               maintaining and optimizing websites for small businesses.
             </li>
             <li key="present-projects">
-              Another projects development:{" "}
-              <strong>Xscriptor — Xliterato — Dev{""}</strong>, art
-              literature and programming portfolios.
+              Ongoing project development: <strong>Xscriptor — Xliterato — DevX</strong>,
+              including art, literature, and programming portfolios.
+            </li>
+            <li key="present-taller-agencia">
+              Currently working as a <strong>developer at Taller Agencia, Spain</strong>.
+            </li>
+            <li key="present-ecosystem">
+              Growing the <strong>X ecosystem</strong> across multiple areas: an
+              Arch Linux spin (<strong>X</strong>), extensions for code editors
+              (VS Code and forks), web applications for deep analysis
+              (<strong>XWA</strong>), complete terminal themes, full ecosystem
+              development for Hyprland, collaboration with Fresh Editor (Rust)
+              in themes and development, and custom package managers in Rust
+              for future distributions.
             </li>
           </ul>
         </div>

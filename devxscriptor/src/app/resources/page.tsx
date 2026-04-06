@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import Gallery from '../components/Gallery';
 
 const repos = [
   {
@@ -59,15 +58,18 @@ export default function ResourcesPage() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col items-center pt-24 pb-12 px-4 md:px-8">
-      <h1 className="text-4xl md:text-5xl font-['EB_Garamond'] mb-16 text-center text-[var(--primary)] text-shadow-sm">
-        Resources
-      </h1>
+    <div className="">
+
+        <h1><span className="inline lg:block">Development <em>lab</em></span>
+        </h1>
+          <p className='pb-10'><span className="inline lg:block text-xl text-right">Engineering <em>Innovative Solutions </em></span>
+           <span className="inline lg:block text-xl text-right"> & <em>Open Source Architectures</em></span>
+          </p>
 
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {repos.map((repo, index) => (
           <Link
-            href={`https://github.com/xscriptordev/${repo.name}`}
+            href={`https://github.com/xscriptor/${repo.name}`}
             key={repo.name}
             target="_blank"
             rel="noopener noreferrer"
@@ -125,15 +127,9 @@ export default function ResourcesPage() {
         className="mt-16 text-center"
       >
         <p className="text-[var(--text-muted)] text-sm">
-          More projects available at <a href="https://github.com/xscriptordev" className="text-[var(--primary)] hover:underline">github.com/xscriptordev</a> and <a href="https://github.com/xscriptor" className="text-[var(--primary)] hover:underline">github.com/xscriptor</a>
+          More resources for developers and writers available at <a href="https://github.com/xscriptor" className="text-[var(--primary)] hover:underline">github.com/xscriptor</a>
         </p>
       </motion.div>
-
-      {/* Gallery Section */}
-      <div className="w-full mt-24">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--border)] to-transparent opacity-50 mb-8"></div>
-        <Gallery />
-      </div>
     </div>
   );
 }
