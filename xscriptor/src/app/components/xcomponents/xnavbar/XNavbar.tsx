@@ -285,67 +285,73 @@ export default function XNavbar({
     >
       {/* ── Desktop ── */}
       <nav className={styles.desktopNav} aria-label="Navegación principal">
-        {linksLeft.map((link) => (
-          <XNavLink key={link.url + link.title} link={link} />
-        ))}
-
-        {/* Botón logo central */}
-        <div
-          className={styles.logoWrapper}
-          onMouseEnter={() => setHoverX(true)}
-          onMouseLeave={() => setHoverX(false)}
-        >
-          <button
-            type="button"
-            onClick={handleLogoClick}
-            aria-label={logoAriaLabel}
-            title={logoTitle}
-            className={styles.logoBtn}
-          >
-            {logo}
-          </button>
-
-          {/* Ícono hint al hover (solo si se pasan themeIcons y el logo es toggle de tema) */}
-          {logoAsThemeToggle && themeIcons && (
-            <>
-              {theme === "light" ? (
-                <motion.div
-                  initial={false}
-                  animate={hoverX ? "visible" : "hidden"}
-                  variants={iconTrayRightVariants}
-                  className={`${styles.iconTray} ${styles.iconTrayRight}`}
-                  style={{
-                    color:
-                      (hoverX ? iconHoverColor ?? iconColor : iconColor) ||
-                      undefined,
-                  }}
-                  aria-hidden
-                >
-                  {renderIcon(themeIcons.toDark, iconSize, iconColor)}
-                </motion.div>
-              ) : (
-                <motion.div
-                  initial={false}
-                  animate={hoverX ? "visible" : "hidden"}
-                  variants={iconTrayLeftVariants}
-                  className={`${styles.iconTray} ${styles.iconTrayLeft}`}
-                  style={{
-                    color:
-                      (hoverX ? iconHoverColor ?? iconColor : iconColor) ||
-                      undefined,
-                  }}
-                  aria-hidden
-                >
-                  {renderIcon(themeIcons.toLight, iconSize, iconColor)}
-                </motion.div>
-              )}
-            </>
-          )}
+        <div className={styles.desktopLinksLeft}>
+          {linksLeft.map((link) => (
+            <XNavLink key={link.url + link.title} link={link} />
+          ))}
         </div>
 
-        {linksRight.map((link) => (
-          <XNavLink key={link.url + link.title} link={link} />
-        ))}
+        {/* Botón logo central */}
+        <div className={styles.logoSlot}>
+          <div
+            className={styles.logoWrapper}
+            onMouseEnter={() => setHoverX(true)}
+            onMouseLeave={() => setHoverX(false)}
+          >
+            <button
+              type="button"
+              onClick={handleLogoClick}
+              aria-label={logoAriaLabel}
+              title={logoTitle}
+              className={styles.logoBtn}
+            >
+              {logo}
+            </button>
+
+            {/* Ícono hint al hover (solo si se pasan themeIcons y el logo es toggle de tema) */}
+            {logoAsThemeToggle && themeIcons && (
+              <>
+                {theme === "light" ? (
+                  <motion.div
+                    initial={false}
+                    animate={hoverX ? "visible" : "hidden"}
+                    variants={iconTrayRightVariants}
+                    className={`${styles.iconTray} ${styles.iconTrayRight}`}
+                    style={{
+                      color:
+                        (hoverX ? iconHoverColor ?? iconColor : iconColor) ||
+                        undefined,
+                    }}
+                    aria-hidden
+                  >
+                    {renderIcon(themeIcons.toDark, iconSize, iconColor)}
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={false}
+                    animate={hoverX ? "visible" : "hidden"}
+                    variants={iconTrayLeftVariants}
+                    className={`${styles.iconTray} ${styles.iconTrayLeft}`}
+                    style={{
+                      color:
+                        (hoverX ? iconHoverColor ?? iconColor : iconColor) ||
+                        undefined,
+                    }}
+                    aria-hidden
+                  >
+                    {renderIcon(themeIcons.toLight, iconSize, iconColor)}
+                  </motion.div>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.desktopLinksRight}>
+          {linksRight.map((link) => (
+            <XNavLink key={link.url + link.title} link={link} />
+          ))}
+        </div>
       </nav>
 
       {/* ── Mobile: botón hamburguesa ── */}

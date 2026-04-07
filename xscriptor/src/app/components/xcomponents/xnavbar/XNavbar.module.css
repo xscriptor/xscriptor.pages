@@ -25,18 +25,38 @@
 /* ── Desktop nav ── */
 .desktopNav {
   display: none;
-  gap: 1.5rem;
   align-items: center;
   width: 100%;
-  justify-content: center;
-  position: relative;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   padding-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
   .desktopNav {
-    display: flex;
+    display: grid;
   }
+}
+
+.desktopLinksLeft,
+.desktopLinksRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.desktopLinksLeft {
+  justify-content: flex-end;
+}
+
+.desktopLinksRight {
+  justify-content: flex-start;
+}
+
+.logoSlot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ── Logo / botón central (desktop) ── */
