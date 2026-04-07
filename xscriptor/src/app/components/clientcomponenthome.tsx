@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import LoadingAnimation from "./LoadingAnimation";
-import InteractivePhrase from "./interactivephrases/InteractiveTextone";
-import InteractivePhrase2 from "./interactivephrases/InteractiveTexttwo";
 import styles from './ClientComponentHome.module.css';
 import NewsletterFooter from "./newsletter/newslettercomponent";
 import XSeparator from "./xcomponents/XSeparator/XSeparator";
@@ -168,6 +166,14 @@ const sextafrase: WordConfig[] = [
         </div>
       </section>
       
+      <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side">
+          <XInteractivePhrase words={segundafrase} as="p" />
+          <XInteractivePhrase words={tercerafrase} as="p" />
+          <XInteractivePhrase words={cuartafrase} as="p" />
+          <XInteractivePhrase words={quintafrase} as="p" />
+          <XInteractivePhrase words={sextafrase} as="p" />
+        </XZigZagLayout>
+
       <section>
         <div>
           <NewsletterFooter />
