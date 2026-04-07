@@ -297,7 +297,7 @@ export default function Clientcomponenthome() {
         errorMessage="Algo salió mal. Por favor, intenta de nuevo."
         termsErrorMessage="Debes aceptar los términos y condiciones para suscribirte..."
 
-        // Aspecto (Tus variables CSS originales)
+        // Estilos
         layout="vertical"
         accentColor="var(--accent)"
         textColor="var(--text)"
@@ -307,7 +307,7 @@ export default function Clientcomponenthome() {
 
 
 
-      <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
+      
     </div>
   );
 }

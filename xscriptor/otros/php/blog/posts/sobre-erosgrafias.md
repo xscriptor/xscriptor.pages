@@ -7,6 +7,7 @@ date: "2025-26-08"
 categories: ["Poesía", "Erosgrafías", "Poesía", "Literatura", "Arte", "Patricia Crespo"]
 image: "/images/blog/erosgrafias.jpg"
 ---
+
 # Sobre Erosgrafías
 
 **Publicado por** *Óscar Preciado* el 26 de agosto del 2025 en: *Literatura, Poesía, Prosa, Blogs, Erosgrafías, Patricia Crespo.*

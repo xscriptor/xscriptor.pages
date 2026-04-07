@@ -1,8 +1,32 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import Navbar from "./navbar";
+import XNavbar from "./xcomponents/xnavbar";
+import { SunIcon, MoonIcon } from "./icons/navbar/navbarIcons";
 import { usePathname } from "next/navigation";
+
+// ── Datos de navegación ────────────────────────────────────────────────────
+// Edita estos arrays para cambiar los enlaces sin tocar el componente XNavbar
+const NAV_LEFT = [
+  { url: "/", title: "Inicio" },
+  { url: "/obras", title: "Obras" },
+  { url: "/info", title: "Info" },
+];
+
+const NAV_RIGHT = [
+  { url: "/contacto", title: "Contacto" },
+  { url: "/blog", title: "Blog" },
+  { url: "https://dev.xscriptor.com", title: "Dev", external: true },
+];
+
+// ── Íconos del toggle de tema ──────────────────────────────────────────────
+// Usamos funciones de render para que XNavbar controle el tamaño via iconSize prop.
+const THEME_ICONS = {
+  toDark:  (size: number) => <MoonIcon size={size} title="Cambiar a oscuro" />,
+  toLight: (size: number) => <SunIcon  size={size} title="Cambiar a claro"  />,
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 const TransitionProvider = () => {
   const pathName = usePathname();
@@ -36,8 +60,27 @@ const TransitionProvider = () => {
           transition={{ delay: 0.2, duration: 0.2, ease: "easeOut" }}
         />
 
-        <Navbar />
-
+        <XNavbar
+          linksLeft={NAV_LEFT}
+          linksRight={NAV_RIGHT}
+          logo="X"
+          logoAsThemeToggle
+          themeIcons={THEME_ICONS}
+          storageKey="theme"
+          labelOpen="Abrir menú"
+          labelClose="Cerrar menú"
+          labelDark="Oscuro"
+          labelLight="Claro"
+          hamburgerBarWidth="1rem"
+          hamburgerBarThickness="2px"
+          iconColor="var(--text)"
+          iconHoverColor="var(--accent)"
+          iconSize={22}
+          linkColor="var(--text)"
+          linkHoverColor="var(--text)"
+          linkActiveColor="var(--accent)"
+          
+        />
       </div>
     </AnimatePresence>
   );

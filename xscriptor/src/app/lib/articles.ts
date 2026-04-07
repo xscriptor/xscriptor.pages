@@ -20,11 +20,44 @@ export interface ArticleMetadata {
     date: string;
     categories: string[];
     tags?: string[];
+    keywords?: string[];
     excerpt?: string;
     readingTime: number;
     image?: string;
     author?: string;
     contentHtml?: string;
+}
+
+function toStringArray(value: unknown): string[] {
+    if (!value) return [];
+    if (Array.isArray(value)) return value.map(v => String(v).trim()).filter(Boolean);
+    if (typeof value === 'string') return [value.trim()].filter(Boolean);
+    return [];
+}
+
+function stripDuplicateLeadMeta(content: string, title?: string): string {
+    const lines = content.split(/\r?\n/);
+    let start = 0;
+
+    while (start < lines.length && !lines[start].trim()) start++;
+
+    if (title && start < lines.length) {
+        const m = lines[start].match(/^#\s+(.+)$/);
+        if (m && m[1].trim().toLowerCase() === title.trim().toLowerCase()) {
+            lines.splice(start, 1);
+            while (start < lines.length && !lines[start].trim()) lines.splice(start, 1);
+        }
+    }
+
+    start = 0;
+    while (start < lines.length && !lines[start].trim()) start++;
+    if (start < lines.length && /^\*\*Publicado por\b/i.test(lines[start].trim())) {
+        lines.splice(start, 1);
+        while (start < lines.length && lines[start].trim()) lines.splice(start, 1);
+        while (start < lines.length && !lines[start].trim()) lines.splice(start, 1);
+    }
+
+    return lines.join('\n').trim();
 }
 
 /**
@@ -64,11 +97,10 @@ export function getSortedArticles(): ArticleMetadata[] {
                 .slice(0, 150) + '...';
         }
 
-        // Normalizar categories a array
-        let categories = matterResult.data.categories || [];
-        if (typeof categories === 'string') {
-            categories = [categories];
-        }
+        // Normalizar arrays
+        const categories = toStringArray(matterResult.data.categories);
+        const tags = toStringArray(matterResult.data.tags);
+        const keywords = toStringArray(matterResult.data.keywords);
 
         return {
             slug,
@@ -76,7 +108,8 @@ export function getSortedArticles(): ArticleMetadata[] {
             description: matterResult.data.description,
             date: matterResult.data.date || new Date().toISOString().split('T')[0],
             categories,
-            tags: matterResult.data.tags,
+            tags,
+            keywords,
             excerpt,
             readingTime,
             image: matterResult.data.image,
@@ -115,6 +148,11 @@ export async function getArticleData(slug: string): Promise<ArticleMetadata | nu
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
+    const cleanMarkdown = stripDuplicateLeadMeta(
+        matterResult.content,
+        matterResult.data.title
+    );
+
     // Convertir markdown a HTML con soporte para fórmulas matemáticas (KaTeX)
     const processedContent = await unified()
         .use(remarkParse)
@@ -122,17 +160,15 @@ export async function getArticleData(slug: string): Promise<ArticleMetadata | nu
         .use(remarkRehype)
         .use(rehypeKatex)
         .use(rehypeStringify)
-        .process(matterResult.content);
+        .process(cleanMarkdown);
     const contentHtml = processedContent.toString();
 
-    const wordCount = matterResult.content.split(/\s+/).length;
+    const wordCount = cleanMarkdown.split(/\s+/).length;
     const readingTime = Math.ceil(wordCount / 200);
 
-    // Normalizar categories
-    let categories = matterResult.data.categories || [];
-    if (typeof categories === 'string') {
-        categories = [categories];
-    }
+    const categories = toStringArray(matterResult.data.categories);
+    const tags = toStringArray(matterResult.data.tags);
+    const keywords = toStringArray(matterResult.data.keywords);
 
     return {
         slug,
@@ -140,7 +176,8 @@ export async function getArticleData(slug: string): Promise<ArticleMetadata | nu
         description: matterResult.data.description,
         date: matterResult.data.date || new Date().toISOString().split('T')[0],
         categories,
-        tags: matterResult.data.tags,
+        tags,
+        keywords,
         excerpt: matterResult.data.excerpt || matterResult.data.description,
         readingTime,
         image: matterResult.data.image,
