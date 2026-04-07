@@ -151,3 +151,35 @@
     left: -9999px;
     top: -9999px;
 }
+
+.withDecorativeX {
+    position: relative;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.decorativeXTop,
+.decorativeXBottom {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    font-weight: 300;
+    color: var(--decorative-x-color, currentColor);
+    opacity: 1;
+    pointer-events: none;
+    background-color: var(--wrapper-bg-color, transparent);
+    padding: 0 0.3rem;
+    line-height: 1;
+    z-index: 1;
+}
+
+.decorativeXTop {
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+
+.decorativeXBottom {
+    bottom: 0;
+    transform: translate(-50%, 50%);
+}

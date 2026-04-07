@@ -49,6 +49,10 @@ interface XContactFormProps {
   statusSuccessColor?: string;
   statusErrorColor?: string;
 
+  // Decorativos
+  decorativeX?: boolean;
+  decorativeXColor?: string;
+
   size?: "small" | "medium" | "large";
   layout?: "vertical" | "grid";
 }
@@ -89,6 +93,8 @@ export default function XContactForm({
   submitSuccessMessage = "Abriendo tu aplicación de correo…",
   statusSuccessColor,
   statusErrorColor,
+  decorativeX = false,
+  decorativeXColor = "currentColor",
   size = "medium",
   layout = "grid",
 }: XContactFormProps) {
@@ -154,6 +160,7 @@ export default function XContactForm({
 
   // Variables CSS dinámicas para estilos configurables
   const customStyles = {
+    ...(decorativeXColor && { "--decorative-x-color": decorativeXColor }),
     ...(labelColor && { "--label-color": labelColor }),
     ...(wrapperBackgroundColor && { "--wrapper-bg-color": wrapperBackgroundColor }),
     ...(wrapperBorderColor && { "--wrapper-border-color": wrapperBorderColor }),
@@ -179,7 +186,8 @@ export default function XContactForm({
   } as React.CSSProperties;
 
   return (
-    <div className={`${styles.wrapper} ${styles[size]}`} style={customStyles}>
+    <div className={`${styles.wrapper} ${styles[size]} ${decorativeX ? styles.withDecorativeX : ""}`} style={customStyles}>
+      {decorativeX && <div className={styles.decorativeXTop}>✕</div>}
       <form onSubmit={onSubmit} className={`${styles.form} ${styles[layout]}`} noValidate>
         <div className={styles.honeypot} aria-hidden="true">
           <label htmlFor="website">Tu web</label>
@@ -233,6 +241,7 @@ export default function XContactForm({
           {status?.msg}
         </p>
       </form>
+      {decorativeX && <div className={styles.decorativeXBottom}>✕</div>}
     </div>
   );
 }
