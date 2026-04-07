@@ -3,27 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TransitionProvider from "./components/transitionProvider";
 import { ReactNode } from "react";
-import XFooter from "./components/xcomponents/xfooter/XFooter";
-
-
-const FOOTER_LINKS = [
-  { label: "Términos y Condiciones", href: "/terminos-y-condiciones" },
-  { label: "Contacto", href: "/contacto" }
-];
-
-const FOOTER_CONFIG = {
-  text: "Xscriptor",
-  showYear: true,
-  yearFirst: false,
-};
-
-const FOOTER_COLORS = {
-  bg: "var(--bg)",
-  text: "var(--text)",
-  accent: "var(--accent)",
-  border: "var(--border)"
-};
-
+import SiteXFooter from "./components/layout/footer/XFooterComponent";
 
 
 export const metadata: Metadata = {
@@ -82,14 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>
           {children}
         </main>
-        
-        <XFooter 
-          links={FOOTER_LINKS}
-          copyright={FOOTER_CONFIG}
-          layout="horizontal"
-          columns={1}
-          colors={FOOTER_COLORS}
-        />
+       <SiteXFooter />
       </body>
     </html>
   );
