@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getArticleData, getAllArticleSlugs } from '../../lib/articles';
 import type { Metadata } from 'next';
+import styles from './ArticlePage.module.css';
 
 interface ArticlePageProps {
     params: Promise<{ slug: string }>;
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     return {
         title: article.title,
         description: article.description || article.excerpt,
+        keywords: article.keywords,
         openGraph: {
             title: article.title,
             description: article.description || article.excerpt,
@@ -54,6 +56,23 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         });
     };
 
+    const uniqueItems = (items: string[]) => {
+        const seen = new Set<string>();
+        return items.filter((item) => {
+            const key = item.trim().toLowerCase();
+            if (!key || seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    };
+
+    const categories = uniqueItems(article.categories || []);
+    const keywords = uniqueItems(
+        article.keywords?.length
+            ? article.keywords
+            : (article.tags?.length ? article.tags : [])
+    );
+
     return (
         <div>
             <article className="max-w-3xl mx-auto px-4 py-12">
@@ -66,17 +85,29 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
                 {/* Header del artículo */}
                 <header className="mb-8">
-                    {/* Categorías */}
-                    {article.categories.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {article.categories.map((cat) => (
-                                <span
-                                    key={cat}
-                                    className="text-xs px-3 py-1 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-medium"
-                                >
-                                    {cat}
-                                </span>
-                            ))}
+                    {/* Categorías (izquierda) + keywords (derecha) */}
+                    {(categories.length > 0 || keywords.length > 0) && (
+                        <div className={styles.pillsRow}>
+                            <div className={styles.pillsLeft}>
+                                {categories.map((cat, index) => (
+                                    <span
+                                        key={`cat-${cat}-${index}`}
+                                        className="text-xs px-3 py-1 rounded-full bg-[var(--accent)] text-[var(--accent-text)] font-medium"
+                                    >
+                                        {cat}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className={styles.pillsRight}>
+                                {keywords.map((kw, index) => (
+                                    <span
+                                        key={`kw-${kw}-${index}`}
+                                        className="text-xs px-3 py-1 rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium"
+                                    >
+                                        {kw}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     )}
 

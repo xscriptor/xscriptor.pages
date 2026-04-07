@@ -297,7 +297,7 @@ export default function Clientcomponenthome() {
         errorMessage="Algo salió mal. Por favor, intenta de nuevo."
         termsErrorMessage="Debes aceptar los términos y condiciones para suscribirte..."
 
-        // Aspecto (Tus variables CSS originales)
+        // Estilos
         layout="vertical"
         accentColor="var(--accent)"
         textColor="var(--text)"
