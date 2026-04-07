@@ -19,8 +19,8 @@
 }
 
 h1 {
-  font-weight: 600;
-  font-size: clamp(28px, 22vw, 40px);
+  font-weight: 400;
+  font-size: clamp(16px, 12vw, 32px);
   margin-bottom: 1vw;
   margin-top: 1vw;
   text-align: center;
