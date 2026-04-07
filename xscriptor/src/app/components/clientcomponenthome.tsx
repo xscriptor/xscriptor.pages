@@ -3,12 +3,11 @@
 import { useEffect, useState } from "react";
 import LoadingAnimation from "./LoadingAnimation";
 import styles from './ClientComponentHome.module.css';
-import NewsletterFooter from "./newsletter/newslettercomponent";
 import XSeparator from "./xcomponents/XSeparator/XSeparator";
 import XInteractivePhrase, { WordConfig } from "./xcomponents/xinteractivephrase/XInteractivePhrase";
 import XZigZagLayout from "./xcomponents/xzigzaglayout/XZigZagLayout";
 import XNewsletter from "./xcomponents/xnewsletter/XNwesletter";
-import XFooter from "./xcomponents/xfooter/XFooter";
+
 
 
 export default function Clientcomponenthome() {
@@ -105,6 +104,102 @@ export default function Clientcomponenthome() {
     { text: "siempre lo fue,", type: "normal", italic: true, bold: true }
   ];
 
+  const septimafrase: WordConfig[] = [
+    { text: "hazme olvidar", type: "underline", bold: true },
+    { text: "la escencia efímera", type: "blur1", italic: true },
+    { text: "de todas las cosas", type: "button", bold: true },
+    { text: "de todas las cosas", type: "blur2", italic: true }
+  ];
+
+  const octavafrase: WordConfig[] = [
+    { text: "Sométeme", type: "underline", bold: true },
+    { text: "al silencio", type: "button", italic: true },
+    { text: "mutilador.", type: "blur2", bold: true }
+  ];
+
+  const novenafrase: WordConfig[] = [
+    { text: "Entonces vendrá", type: "normal" },
+    { text: "la soledad", type: "underline", bold: true },
+    { text: "y con ella aprenderé", type: "normal", breakAfter: true },
+
+    { text: "que no sólo", type: "normal" },
+    { text: "las rosas marchitan,", type: "blur1", italic: true },
+    { text: "lo que late", type: "button", bold: true },
+    { text: "en nosotros también.", type: "blur2", italic: true, bold: true }
+  ];
+
+  const decimafrase: WordConfig[] = [
+    { text: "Florecen los almendros", type: "underline", bold: true },
+    { text: "a la vista de los", type: "normal" },
+    { text: "anhelos", type: "button", italic: true, bold: true },
+    { text: "insatisfechos.", type: "blur2", italic: true }
+  ];
+
+  const onceavafrase: WordConfig[] = [
+    { text: "Y sentir", type: "normal" },
+    { text: "que lo desmedido", type: "underline", bold: true },
+    { text: "era", type: "button", italic: true },
+    { text: "bidireccional.", type: "blur2", bold: true }
+  ];
+
+  const doceavafrase: WordConfig[] = [
+    { text: "Te sucedía", type: "normal" },
+    { text: "una intensidad", type: "underline", bold: true },
+    { text: "de longitudes absurdas,", type: "blur1", italic: true, breakAfter: true },
+
+    { text: "amoldada", type: "normal" },
+    { text: "a todos y cada uno", type: "button", bold: true },
+    { text: "de tus abismos,", type: "blur2", italic: true, breakAfter: true },
+
+    { text: "como si la suma", type: "normal" },
+    { text: "de recorridos", type: "normal", italic: true },
+    { text: "llenase de aire", type: "normal" },
+    { text: "el espacio", type: "blur1", bold: true },
+    { text: "en el que más tarde", type: "normal", breakAfter: true },
+
+    { text: "la liquidez de su fruto", type: "blur2", italic: true },
+    { text: "se fusionaría.", type: "blur2", bold: true }
+  ];
+
+  const treceavafrase: WordConfig[] = [
+    { text: "Dolerá lo que tenga que doler", type: "underline", bold: true, breakAfter: true },
+
+    { text: "arrancarse de la piel", type: "normal" },
+    { text: "eso a lo que", type: "normal", italic: true, breakAfter: true},
+    { text: "fugazmente", type: "button", bold: true },
+    { text: "se pertenece", type: "blur2", italic: true, breakAfter: true },
+
+    { text: "y se sentirá levemente,", type: "normal" },
+    { text: "pero recalcitrante,", type: "blur1", italic: true },
+    { text: "un alfiler punzante", type: "blur1", bold: true, breakAfter: true },
+
+    { text: "fertilizando la piel", type: "normal" },
+    { text: "para que alguien más", type: "button", bold: true },
+    { text: "habite lo que perdimos", type: "blur2", italic: true },
+    { text: "en el ayer.", type: "blur2", bold: true }
+  ];
+
+  const catorceavafrase: WordConfig[] = [
+    { text: "A cuatro horas de un beso", type: "underline", bold: true, breakAfter: true },
+
+    { text: "me percaté de que llevo", type: "normal" },
+    { text: "media vida escapándome", type: "normal", italic: true, breakAfter: true },
+
+    { text: "con los cigarrillos", type: "button", bold: true },
+    { text: "y el whisky", type: "button", bold: true },
+    { text: "perforándome el pulmón", type: "blur2", italic: true },
+    { text: "y las entrañas,", type: "blur2", breakAfter: true },
+
+    { text: "pero también", type: "normal" },
+    { text: "me he percatado", type: "normal", italic: true },
+    { text: "de que más entrañables", type: "normal" },
+    { text: "son tus labios", type: "blur1", bold: true, breakAfter: true },
+
+    { text: "que sin violencia", type: "normal" },
+    { text: "transgreden mi cuello", type: "blur1", italic: true },
+    { text: "y me invitan a quedarme.", type: "blur1", bold: true }
+  ];
+
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(t);
@@ -124,7 +219,7 @@ export default function Clientcomponenthome() {
         <XInteractivePhrase words={primerafrase} as="h1" />
       </div>
 
-      <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side">
+      <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side" showLine={true} lineColor="var(--accent)" lineThickness={0.2}>
         <XInteractivePhrase words={segundafrase} as="p" />
         <XInteractivePhrase words={tercerafrase} as="p" />
         <XInteractivePhrase words={cuartafrase} as="p" />
@@ -167,15 +262,20 @@ export default function Clientcomponenthome() {
           <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
         </div>
       </section>
-
-      <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side">
-        <XInteractivePhrase words={segundafrase} as="p" />
-        <XInteractivePhrase words={tercerafrase} as="p" />
-        <XInteractivePhrase words={cuartafrase} as="p" />
-        <XInteractivePhrase words={quintafrase} as="p" />
-        <XInteractivePhrase words={sextafrase} as="p" />
+      <div className="text-center">
+        <XInteractivePhrase words={septimafrase} as="h2" />
+      </div>
+      <XZigZagLayout className="mt-8" startSide="left" gap={6} offset="clamp(1rem, 4vw, 4rem)" textAlign="side" showLine={true} lineColor="var(--accent)" lineThickness={0.2}>
+        <XInteractivePhrase words={doceavafrase} as="p" />
+        <XInteractivePhrase words={treceavafrase} as="p" />
+        <XInteractivePhrase words={novenafrase} as="p" />
+        <XInteractivePhrase words={decimafrase} as="p" />
+        <XInteractivePhrase words={onceavafrase} as="p" />
+        <XInteractivePhrase words={catorceavafrase} as="p" />
       </XZigZagLayout>
-
+      <div className="text-center">
+        <XInteractivePhrase words={octavafrase} as="p" />
+      </div>
       <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
 
       <XNewsletter
@@ -205,7 +305,7 @@ export default function Clientcomponenthome() {
         buttonTextColor="var(--accent-text)"
       />
 
-      
+
 
       <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
     </div>

@@ -27,8 +27,8 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
-  font-size: clamp(24px, 10vw, 28px);
+  font-weight: 300;
+  font-size: clamp(24px, 8vw, 26px);
   margin-bottom: 1vw;
   margin-top: 1vw;
   text-align: center;
