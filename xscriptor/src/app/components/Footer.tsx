@@ -16,7 +16,7 @@ export default function Footer({ className = "", style }: FooterProps) {
     >
       <div className="mx-auto max-w-screen-xl px-4 py-3 flex flex-col md:flex-row items-center justify-center gap-2 text-xs opacity-70">
         <span>
-          © {new Date().getFullYear()} Xscriptor — Todos los derechos reservados
+          © {new Date().getFullYear()} Xscriptor
         </span>
         <span className="hidden md:inline">·</span>
         <nav className="flex items-center gap-3">

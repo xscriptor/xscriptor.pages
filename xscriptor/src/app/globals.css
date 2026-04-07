@@ -19,16 +19,16 @@
 }
 
 h1 {
-  font-weight: 600;
-  font-size: clamp(28px, 22vw, 40px);
+  font-weight: 400;
+  font-size: clamp(16px, 12vw, 32px);
   margin-bottom: 1vw;
   margin-top: 1vw;
   text-align: center;
 }
 
 h2 {
-  font-weight: 600;
-  font-size: clamp(24px, 10vw, 28px);
+  font-weight: 300;
+  font-size: clamp(24px, 8vw, 26px);
   margin-bottom: 1vw;
   margin-top: 1vw;
   text-align: center;
@@ -47,7 +47,6 @@ p {
   font-size: clamp(18px, 2.5vw, 20px);
   margin-bottom: 2vw;
   margin-top: 2vw;
-  text-align: justify;
   padding-right: 15vw;
   padding-left: 15vw;
 }

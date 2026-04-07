@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TransitionProvider from "./components/transitionProvider";
 import { ReactNode } from "react";
-import Footer from "./components/Footer";
+import SiteXFooter from "./components/layout/footer/XFooterComponent";
 
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main>
           {children}
         </main>
-        <Footer />
+       <SiteXFooter />
       </body>
     </html>
   );
