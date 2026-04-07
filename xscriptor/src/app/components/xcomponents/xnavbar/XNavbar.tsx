@@ -56,6 +56,14 @@ export type XNavbarProps = {
   /** Key de localStorage para persistencia del tema. Default: "theme" */
   storageKey?: string;
 
+  // ── Color de los enlaces de navegación ──────────────────────────────────────
+  /** Color base de los enlaces (Inicio, Contacto, etc.). Default: var(--text) */
+  linkColor?: string;
+  /** Color al hacer hover sobre los enlaces. Default: opacidad reducida del linkColor */
+  linkHoverColor?: string;
+  /** Color del borde inferior del enlace activo. Default: linkColor */
+  linkActiveColor?: string;
+
   // ── Color y tamaño de íconos theme-toggle ────────────────────────────────
   /** Color base de los íconos. Acepta cualquier valor CSS: hex, hsl, "var(--accent)", etc.
    *  Si no se pasa, los íconos heredan el color del texto (currentColor). */
@@ -178,6 +186,9 @@ export default function XNavbar({
   themeIcons,
   defaultTheme = "light",
   storageKey = "theme",
+  linkColor,
+  linkHoverColor,
+  linkActiveColor,
   iconColor,
   iconHoverColor,
   iconSize = 22,
@@ -236,11 +247,14 @@ export default function XNavbar({
   // ── CSS vars inyectadas en el <header> via inline style ─────────────────
   // Usando "--xnav-*" como namespace para no colisionar con vars globales.
   const headerStyle = {
-    ...(iconColor           && { "--xnav-icon-color"  : iconColor }),
-    ...(iconHoverColor      && { "--xnav-icon-hover"  : iconHoverColor }),
-    ...(hamburgerColor      && { "--xnav-bar-color"   : hamburgerColor }),
-    ...(hamburgerBarWidth   && { "--xnav-bar-w"       : hamburgerBarWidth }),
-    ...(hamburgerBarThickness && { "--xnav-bar-h"     : hamburgerBarThickness }),
+    ...(linkColor         && { "--xnav-link-color"  : linkColor }),
+    ...(linkHoverColor    && { "--xnav-link-hover"  : linkHoverColor }),
+    ...(linkActiveColor   && { "--xnav-link-active" : linkActiveColor }),
+    ...(iconColor         && { "--xnav-icon-color"  : iconColor }),
+    ...(iconHoverColor    && { "--xnav-icon-hover"  : iconHoverColor }),
+    ...(hamburgerColor    && { "--xnav-bar-color"   : hamburgerColor }),
+    ...(hamburgerBarWidth   && { "--xnav-bar-w"     : hamburgerBarWidth }),
+    ...(hamburgerBarThickness && { "--xnav-bar-h"   : hamburgerBarThickness }),
     ...cssVars,
   } as CSSProperties;
 

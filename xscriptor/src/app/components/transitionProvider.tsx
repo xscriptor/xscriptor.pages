@@ -76,6 +76,9 @@ const TransitionProvider = () => {
           iconColor="var(--text)"
           iconHoverColor="var(--accent)"
           iconSize={22}
+          linkColor="var(--text)"
+          linkHoverColor="var(--text)"
+          linkActiveColor="var(--accent)"
           
         />
       </div>

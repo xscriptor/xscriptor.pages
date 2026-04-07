@@ -4,6 +4,7 @@ import "./globals.css";
 import TransitionProvider from "./components/transitionProvider";
 import { ReactNode } from "react";
 import SiteXFooter from "./components/layout/footer/XFooterComponent";
+import XSeparator from "./components/xcomponents/XSeparator/XSeparator";
 
 
 export const metadata: Metadata = {
@@ -59,9 +60,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="es">
       <body className={`min-h-screen flex flex-col bg-(--bg) text-(--text)`}>
         <TransitionProvider />
+        <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
         <main>
           {children}
         </main>
+        <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
        <SiteXFooter />
       </body>
     </html>

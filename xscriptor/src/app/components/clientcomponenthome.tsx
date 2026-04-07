@@ -307,7 +307,7 @@ export default function Clientcomponenthome() {
 
 
 
-      <XSeparator orientation="horizontal" variant="dashed" hasX color="var(--accent)" xColor="var(--accent)" thickness="1px" gap="2rem" isFaded={true} xBg="var(--bg)" className="my-8" />
+      
     </div>
   );
 }
