@@ -1,17 +1,13 @@
+"use client";
+
 import styles from './ContactPage.module.css';
-import XContactForm from '../components/xcomponents/xcontacform/XContactForm';
-import XSocialContact from '../components/xcomponents/xsocialcontact/XSocialContact';
+import { XContactForm, XSocialContact } from '@xscriptor/xcomponents';
 import {
   TelegramIcon,
   InstagramIcon,
   WhatsappIcon,
   EmailIcon,
 } from '../components/xcomponents/xsocialcontact/SocialIcons';
-
-export const metadata = {
-  title: "Contacto — Xscriptor",
-  description: "Comunícate con Óscar Preciado — Formulario de contacto y redes sociales",
-}
 
 export default function ContactPage() {
   return (

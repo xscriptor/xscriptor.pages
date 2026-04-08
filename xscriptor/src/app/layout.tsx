@@ -4,8 +4,8 @@ import "./globals.css";
 import TransitionProvider from "./components/transitionProvider";
 import { ReactNode } from "react";
 import SiteXFooter from "./components/layout/footer/XFooterComponent";
-import XSeparator from "./components/xcomponents/XSeparator/XSeparator";
-
+import { XSeparator } from "@xscriptor/xcomponents";
+import "@xscriptor/xcomponents/styles.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://xscriptor.com"),

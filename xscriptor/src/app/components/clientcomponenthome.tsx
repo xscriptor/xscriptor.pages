@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 import LoadingAnimation from "./LoadingAnimation";
-import styles from './ClientComponentHome.module.css';
-import XSeparator from "./xcomponents/XSeparator/XSeparator";
-import XInteractivePhrase, { WordConfig } from "./xcomponents/xinteractivephrase/XInteractivePhrase";
-import XZigZagLayout from "./xcomponents/xzigzaglayout/XZigZagLayout";
-import XNewsletter from "./xcomponents/xnewsletter/XNwesletter";
+import styles from "./ClientComponentHome.module.css";
 
+import {
+  XInteractivePhrase,
+  XNewsletter,
+  XSeparator,
+  XZigZagLayout,
+} from "@xscriptor/xcomponents";
+import type { WordConfig } from "@xscriptor/xcomponents/content";
+
+import "@xscriptor/xcomponents/styles.css";
 
 
 export default function Clientcomponenthome() {
