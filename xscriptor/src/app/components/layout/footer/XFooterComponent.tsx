@@ -1,4 +1,4 @@
-import XFooter from "@/app/components/xcomponents/xfooter/XFooter";
+import { XFooter } from "@xscriptor/xcomponents";
 
 const FOOTER_LINKS = [
   { label: "Términos y Condiciones", href: "/terminos-y-condiciones" },

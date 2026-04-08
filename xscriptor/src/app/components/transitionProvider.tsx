@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import XNavbar from "./xcomponents/xnavbar";
+import { XNavbar } from "@xscriptor/xcomponents";
 import { SunIcon, MoonIcon } from "./icons/navbar/navbarIcons";
 import { usePathname } from "next/navigation";
 
