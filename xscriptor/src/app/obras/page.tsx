@@ -23,7 +23,7 @@ export default function coleccionesPage() {
                 </h3>
               </Link>
               <em>
-                Un viaje introspectivo a través de la melancolía, los recuerdos agridulces y la materialización más profunda del simiento de pérdida.
+                Un viaje introspectivo a través de la melancolía, los recuerdos agridulces y la materialización más profunda del sentimiento de pérdida.
               </em>
             </li>
             <li>
