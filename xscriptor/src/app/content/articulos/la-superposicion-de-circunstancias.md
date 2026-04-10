@@ -5,7 +5,7 @@ keywords: ["literatura", "poesía", "ciencia", "escritura creativa", "frases", "
 author: "Xscriptor — Óscar Preciado"
 date: "2024-07-20"
 categories: ["Literatura", "Ciencia", "Arte", "Colaterales", "Poesía"]
-image: "/images/blog/lasuperposiciondesircunstancias0.webp"
+image: "/images/blog/superposicion-de-circunstancias.webp"
 ---
 
 # La superposición de circunstancias
@@ -23,4 +23,4 @@ Jamás se está tan cerca de algo que no ocurre como cuando lo contemplamos y es
 
 **Sabemos por los sectores que concebimos inertes de nuestras capacidades cognitivas que algo tuvo un espacio y un tiempo muy cercano a su valor nulo, pero esto no es suficiente para encarnar su absoluta negación, por lo que, en el detenimiento de la secuencia una luz brilla donde se supone la presencia inmutable de un vacío. Es el recuerdo de lo que pudo ser y no fue, el engendro silencioso de la materia onírica que sólo se ve esculpida mediante la ausencia de una interacción, imaginación.**
 
-![La superposición de circunstancias](/images/blog/lasuperposiciondesircunstancias0.webp)
+![La superposición de circunstancias](/images/blog/superposicion-de-circunstancias.webp)

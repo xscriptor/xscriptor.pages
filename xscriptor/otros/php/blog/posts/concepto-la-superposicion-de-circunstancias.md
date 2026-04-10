@@ -5,7 +5,7 @@ keywords: ["literatura", "ciencia", "escritura creativa", "frases", "textos", "s
 author: "Xscriptor — Óscar Preciado"
 date: "2025-08-23"
 categories: ["Literatura", "Ciencia", "Arte", "Ensayo", "Poesía"]
-image: "/images/blog/lasuperposiciondesircunstancias0.webp"
+image: "/images/blog/superposicion-de-circunstancias.webp"
 ---
 # Concepto - La superposición de circunstancias
 
