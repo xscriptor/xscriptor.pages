@@ -17,6 +17,16 @@ export default function coleccionesPage() {
           <h2><Link href="/obras/literatura">Literatura</Link></h2>
           <ul className={styles.libros}>
             <li>
+              <Link href="/obras/literatura/boulevard">
+                <h3>
+                  Boulevard
+                </h3>
+              </Link>
+              <em>
+                Un viaje introspectivo a través de la melancolía, los recuerdos agridulces y la materialización más profunda del sentimiento de pérdida.
+              </em>
+            </li>
+            <li>
               <Link href="/obras/literatura/asintota">
                 <h3>
                   Asíntota

@@ -1,12 +1,35 @@
+"use client"
 import ImageTrail from '@/app/components/ImageTrail';
 import styles from './LiteraturaPage.module.css';
 
 
+import Link from 'next/link';
 
 export default function librosPage() {
     return (
         <div>
             <h1>Literatura</h1>
+            
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '3rem 0' }}>
+                <Link href="/obras/literatura/boulevard">
+                    <img 
+                        src="/images/colecciones/libros/boulevard.webp" 
+                        alt="Boulevard Lector" 
+                        style={{ 
+                            borderRadius: '12px', 
+                            maxWidth: '300px', 
+                            width: '100%', 
+                            height: 'auto', 
+                            cursor: 'pointer', 
+                            boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                            transition: 'transform 0.3s ease'
+                        }} 
+                        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                    />
+                </Link>
+            </div>
+
             <div>
             <div className={styles.imageTrailContainer}>
                 <ImageTrail
