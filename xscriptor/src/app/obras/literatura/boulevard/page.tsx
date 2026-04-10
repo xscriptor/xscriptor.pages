@@ -8,7 +8,10 @@ export default function BoulevardPage() {
 
   return (
     <main className="min-h-screen py-16 px-4 md:px-8 max-w-7xl mx-auto flex flex-col items-center">
-      <XBookReader rawText={rawText} />
+      <XBookReader 
+        rawText={rawText} 
+        coverImage="/images/colecciones/libros/boulevard.webp" 
+      />
     </main>
   );
 }

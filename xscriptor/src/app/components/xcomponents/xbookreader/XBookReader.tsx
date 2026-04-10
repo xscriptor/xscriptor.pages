@@ -8,9 +8,10 @@ import styles from "./XBookReader.module.css";
 
 interface XBookReaderProps {
   rawText: string;
+  coverImage?: string;
 }
 
-export default function XBookReader({ rawText }: XBookReaderProps) {
+export default function XBookReader({ rawText, coverImage }: XBookReaderProps) {
   const [pages, setPages] = useState<string[][]>([]);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -108,7 +109,22 @@ export default function XBookReader({ rawText }: XBookReaderProps) {
   return (
     <div className={styles.readerContainer}>
       <div key={currentPage} className={styles.bookContent}>
-        <XZigZagLayout 
+        {currentPage === 0 && coverImage && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
+            <img 
+              src={coverImage} 
+              alt="Book Cover" 
+              style={{ 
+                borderRadius: '12px', 
+                maxWidth: '300px', 
+                width: '100%', 
+                height: 'auto', 
+                boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+              }} 
+            />
+          </div>
+        )}
+        <XZigZagLayout  
            className="mt-8" 
            startSide="left" 
            gap={6} 
